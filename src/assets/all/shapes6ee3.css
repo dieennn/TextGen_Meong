@@ -1,0 +1,15 @@
+.shapes{padding:10px;}
+	#categories{padding:5px;}
+		#categories h4{float:left;margin:0 5px 0 0;line-height:24px;}
+		.selectorContainer{float:left;}
+			.selector span{display:inline-block;width:20px;}
+	.shapes .section{margin:-5px;margin-bottom:15px;}
+		.shapes .section pre{display:block;float:left;min-width:42px;min-height:32px;line-height:32px;margin:5px;padding:4px;border:1px solid #E2E2E2;border-radius:3px;cursor:pointer;font-size:21px;text-align:center;}
+		.shapes .section pre:hover{background:#F6F6F6;transition:0.3s;}
+	.shapes p{text-align:center;}
+@media (max-width:600px) {
+.shapes{padding:5px;}
+	#categories h4{float:none;margin:auto;text-align:center;}
+	.selectorContainer{float:none;margin:auto;}
+	.shapes .section pre{overflow:hidden;width:auto;max-width:95%;}
+}

@@ -1,0 +1,11 @@
+.mirrored{padding:10px;}
+.mirrored #input{margin-bottom:10px}
+.mirrored #output{list-style:none;margin:0 0 10px 0;padding:0;}
+	.mirrored #output li{display:block;min-height:18px;margin-bottom:25px;padding:5px;border:1px solid #E2E2E2;border-radius:3px;line-height:18px;box-shadow:0 5px 5px -5px #000;}
+		.mirrored pre{display:block;margin:0;padding:0;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;}
+.mirrored p{text-align:center;}
+
+@media (max-width:600px) {
+	.mirrored{padding:5px;}
+		.mirrored #output li{min-height:20px;margin:0 auto 10px auto;line-height:20px;box-shadow:0 5px 5px -5px #000;font-size:16px;}
+}

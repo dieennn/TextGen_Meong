@@ -1,0 +1,19 @@
+.contact{padding:10px;}
+
+	.contact h3{padding:4px;border:1px solid #E2E2E2;border-radius:3px;}
+
+	.contact label{display:block;padding:3px 0;color:#408EBB;}
+	.contact .borte{display:none;}
+
+	.contact input, .contact textarea{width:100%;max-width:100%;padding:3px;border:1px solid #EEE;border-radius:3px;}
+	.contact input[type=text]:focus,.contact textarea:focus{border-color:#408EBB;}
+	.contact input[type=text]{max-width:200px;}
+	.contact textarea{height:150px;}
+
+	.contact input[type=submit]{color:#408EBB;font-weight:bold;}
+	
+
+
+@media (max-width:600px) {
+	.contact{padding:5px;}
+}

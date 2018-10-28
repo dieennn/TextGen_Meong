@@ -1,0 +1,13 @@
+.stacked{padding:10px;}
+.stacked #input{margin-bottom:10px}
+	#textinTop,#textinBottom{display:block;height:27px;width:100%;margin:0;padding:4px 24px 4px 4px;background:transparent !important;border:none;line-height:19px;font-size:16px;font-weight:bold;color:#FFF;text-shadow:0 1px 0 #000;cursor:pointer;resize:none;}
+
+.stacked #output{list-style:none;margin:0 0 10px 0;padding:0;}
+	.stacked #output li{display:block;min-height:33px;margin-bottom:25px;padding:13px 5px 5px 5px;border:1px solid #E2E2E2;border-radius:3px;line-height:33px;box-shadow:0 5px 5px -5px #000;}
+		.stacked pre{display:block;margin:0;padding:0;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;font-family:'Times New Roman';font-size:28px;font-weight:bold;}
+.stacked p{text-align:center;}
+
+@media (max-width:600px) {
+	.stacked{padding:5px;}
+		.stacked #output li{min-height:60px;margin:0 auto 10px auto;line-height:60px;box-shadow:0 5px 5px -5px #000;}
+}

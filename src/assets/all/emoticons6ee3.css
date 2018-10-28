@@ -1,0 +1,19 @@
+.emoticons{padding:10px;}
+	.emoticons #categories{line-height:24px;}
+		.emoticons #categories h4,.emoticons #categories a{float:left;margin:0;padding:5px;}
+		.emoticons #categories a{display:block;width:24px;height:24px;opacity:0.55;}
+		.emoticons #categories a:hover,.emoticons #categories a.active{opacity:1.0;transition:0.3s;}
+	.inputTextad{overflow:hidden;height:15px;margin-top:3px;padding:2px 7px;}
+	.emoticons .section{margin:-5px;margin-bottom:15px;}
+		.emoticons .section pre{display:block;float:left;min-width:42px;min-height:32px;line-height:32px;margin:5px;padding:4px;border:1px solid #E2E2E2;border-radius:3px;cursor:pointer;font-size:21px;text-align:center;}
+		.emoticons .section pre:hover{background:#F6F6F6;transition:0.3s;}
+	.emoticons p{text-align:center;}
+@media (max-width:600px) {
+.emoticons{padding:5px;}
+	.emoticons #categories{text-align:center;}
+		.emoticons #categories h4{float:none;text-align:center;}
+		.emoticons #categories a{display:inline-block;float:none;}
+	.inputTextad{display:none;}
+		.inputTextad ins{display:none;}
+		.emoticons .section pre{overflow:hidden;width:auto;max-width:85%;}
+}

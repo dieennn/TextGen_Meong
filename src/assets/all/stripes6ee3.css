@@ -1,0 +1,14 @@
+.stripes{padding:10px;}
+.stripes #input{margin-bottom:10px}
+.stripes #output{list-style:none;margin:0 0 10px 0;padding:0;}
+	.stripes #output li{display:block;min-height:18px;margin-bottom:0;padding:5px;border:1px solid #E2E2E2;border-radius:3px;line-height:18px;box-shadow:0 5px 5px -5px #000;}
+		.stripes pre{display:block;margin:0;padding:0;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;}
+.stripes #options .section{margin-bottom:10px;padding:5px;text-align:center;}
+	.stripes #options span{display:inline-block;width:27px;height:27px;margin:1px;border:1px solid #E2E2E2;border-radius:3px;background:#FFF;line-height:27px;text-align:center;cursor:pointer;text-shadow:0 1px 0 #FFF;}
+	.stripes #options span:hover,.stripes #options span.active{background:#F6F6F6;transition:0.3s;}
+.stripes p{text-align:center;}
+
+@media (max-width:600px) {
+	.stripes{padding:5px;}
+		.stripes #output li{min-height:20px;line-height:20px;box-shadow:0 5px 5px -5px #000;font-size:16px;}
+}

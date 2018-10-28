@@ -1,0 +1,17 @@
+.allpartners{padding:10px;}
+	.allpartners .links{margin:-5px -5px 15px -5px;}
+		.allpartners .column{float:left;width:33%;}
+			.allpartners .column h3{margin:5px;padding:4px;border:1px solid #E2E2E2;border-radius:3px;}
+			.allpartners .column ul{margin:5px;padding:4px;border:1px solid #E2E2E2;border-radius:3px;list-style:none;}
+				.allpartners .column a{display:block;padding:5px 3px;}
+				.allpartners .column a:hover{background:#F6F6F6;transition:0.3s;}
+	.allpartners p{text-align:center;}
+
+@media (max-width:850px) {
+		.allpartners .column{float:left;width:50%;}
+}
+	
+@media (max-width:600px) {
+.allpartners{padding:5px;}
+	.allpartners .column{float:left;width:100%;}
+}

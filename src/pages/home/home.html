@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-navbar>
+<!--     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>M3ong T3xt-G3n</ion-title>
+    <a class="button button-icon icon ion-settings"></a>
+        <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()"  title="about">
+        <ion-icon name="md-information" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+
+
+<!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Button with data-target
+</button> -->
+
+
+
+
+<!--   <h3>Ionic Menu Starter</h3>
+
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+  </p>
+
+  <button ion-button secondary menuToggle>Toggle Menu</button> -->
+
+<div id="input">
+    <div class="inputContainer control">
+      <div class="inputStyler gradientRed">
+        <textarea id="textin" data-value="Enter your text here!">Enter your text here!</textarea>
+        <i class="clear empty" title="Clear all fields">&times;</i>
+      </div>
+    </div>
+    <div class="inputTextad control">
+  
+    </div>
+    <ul id="options">
+      <li class="optionToggle noselect" id="checkBreeze" title="bReEzE">αBc</li>
+      <li class="optionToggle noselect" id="checkReverse" title="Reverse">cвα</li>
+      <li class="optionToggle noselect" id="checkBox" title="Boxed">[̲̅α̲̅][̲̅в̲̅]</li>
+      <li class="optionToggle noselect" id="checkWave" title="Waves">͠α͠в͠c</li>
+      <li class="optionToggle noselect" id="checkSmoke" title="Smoky">͕͗a͕͕͗͗b͕͗c͕͗</li>
+      <li class="optionToggle noselect" id="checkUpperline" title="Upperline">̅α̅в̅c̅</li>
+      <li class="optionToggle noselect" id="checkUnderline" title="Underline">̲α̲в̲c̲</li>
+      <li class="optionToggle noselect" id="checkStrike" title="Strikethrough">̶α̶в̶c̶</li>
+      <!-- <li><a href="stripes/index.html" class="more" title="Go to the stripes page">more</a></li> -->
+    </ul>
+</div>
+<ul id="output">
+    <li class="gradientGray" title="Math Script (Royal) Bold | "><pre id="output163" contenteditable="true"></pre></li>
+    <!-- <li class="ad"><a href="http://www.weirdgenerator.com/" title="Get cool boxed text @ weirdgenerator.com | 68 clicks" target="_blank" data-aid="2">(&hearts;‿&hearts;) ٩͡๏̯͡๏۶ツ【★】 ͔͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗W͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗E͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗I͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗R͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗D͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗G͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗E͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗N͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗E͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗R͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗A͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗T͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗O͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗R͔͔۪͔͔͔͗͗͗͗۫͗۰͔͗ 【★】ツ ٩͡๏̯͡๏۶(&hearts;‿&hearts;)</a></li> -->
+    <li class="gradientGray " title="Math Bold Italic | "><pre id="output177" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Math Fraktur Bold | "><pre id="output176" contenteditable="true"></pre></li>
+
+    <li class="gradientGray" title="Math Script (Royal) | "><pre id="output160" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Lower Upper Bold | "><pre id="output173" contenteditable="true"></pre></li>
+
+    <li class="gradientGray" title="Monospace | "><pre id="output169" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Math Sans Bold Italic | "><pre id="output180" contenteditable="true"></pre></li>
+
+    <li class="gradientGray" title="Math Fraktur | "><pre id="output162" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Lower Upper Light | "><pre id="output119" contenteditable="true"></pre></li>
+
+    <li class="gradientGray" title="Lower Upper Refurbished | "><pre id="output182" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Math Sans Italic | "><pre id="output181" contenteditable="true"></pre></li>
+
+    <li class="gradientGray" title="Math Bold | "><pre id="output175" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Double Struck | "><pre id="output165" contenteditable="true"></pre></li>
+    <!-- <li class="ad"><a href="http://www.weirdgenerator.com/" title="Get a cool text @ weirdgenerator.com. You can use your messletters text and pimp it on weirdgenerator! | 22 clicks" target="_blank" data-aid="148">▂▃▅▆▇█ (⊙.⊙(☉_☉)⊙.⊙) █ Ｗ █ Ｅ █ Ｉ █ Ｒ █ Ｄ █ (⊙.⊙(☉_☉)⊙.⊙) █▇▆▅▃▂</a></li> -->
+    <li class="gradientGray" title="Boxed Black | "><pre id="output184" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Math Sans | "><pre id="output178" contenteditable="true"></pre></li>
+<!--     <li class="ad"><a href="http://www.oddsoflove.com/" title="Find out what your odds of love are with that cute boy or girl! OddsOfLove.com &hearts; | 17 clicks" target="_blank" data-aid="150">&hearts; What are your odds of Love? &hearts; 10%? 40%? Or maybe 100%? Find it out! &hearts;</a></li> -->
+    <li class="gradientGray" title="Math Sans Bold | "><pre id="output179" contenteditable="true"></pre></li>
+
+<!-- More Content -->
+<!-- <button ion-button full (click)="toggle()">Ciutkan</button> -->
+<div class="collapse" id="collapseExample">
+  <div class="well">
+
+    <li class="moreContent">
+      <ul>
+        <li class="gradientGray" title="Dwarf | "><pre id="output120" contenteditable="true"></pre></li>
+<!-- More Content -->
+
+    <li class="gradientGray" title="Stroked | "><pre id="output188" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Smooth v2 | "><pre id="output159" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Classic | "><pre id="output116" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Fullwidth | "><pre id="output134" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Carrier | "><pre id="output166" contenteditable="true"></pre></li>
+
+    <li class="gradientGray" title="Smooth | "><pre id="output117" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Bent | "><pre id="output164" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Celtic | "><pre id="output130" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Ribbon | "><pre id="output141" contenteditable="true"></pre></li>
+    
+    <li class="gradientGray" title="Writing | "><pre id="output143" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Stupid | "><pre id="output135" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Twisted | "><pre id="output138" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Cranky | "><pre id="output155" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Cute | "><pre id="output124" contenteditable="true"></pre></li>
+    
+    <li class="gradientGray" title="Maniac | "><pre id="output139" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Russian | "><pre id="output131" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Tamil | "><pre id="output140" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Strange | "><pre id="output115" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Dotted | "><pre id="output129" contenteditable="true"></pre></li>
+    
+    <li class="gradientGray" title="DraKo | "><pre id="output172" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Hazy | "><pre id="output123" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Hyves | "><pre id="output118" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Wiggly | "><pre id="output145" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Slammer | "><pre id="output153" contenteditable="true"></pre></li>
+    
+    <li class="gradientGray" title="Boxed | "><pre id="output183" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Facebook | "><pre id="output170" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Crazy | "><pre id="output142" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="FlipRev | "><pre id="output151" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Mirrored | "><pre id="output137" contenteditable="true"></pre></li>
+    
+    <li class="gradientGray" title="Big Momma | "><pre id="output146" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Flip | "><pre id="output150" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="1337 | "><pre id="output152" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Facebook 2 | "><pre id="output171" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Parenthesized | "><pre id="output133" contenteditable="true"></pre></li>
+    
+    <li class="gradientGray" title="AwCute | "><pre id="output185" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Faux Ethiopic | "><pre id="output186" contenteditable="true"></pre></li>
+    <li class="gradientGray" title="Blocks | "><pre id="output189" contenteditable="true"></pre></li>
+    </ul></li>
+  </div>
+</div>
+</ul>
+
+<!-- <div id="moreButtonContainer"><span class="moreButton" (click)="toggle()">▾ Show More</span></div> -->
+<div>
+  <button ion-button full role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Open/Close</button>
+</div>
+</ion-content>

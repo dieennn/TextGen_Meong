@@ -1,0 +1,18 @@
+.characters{padding:10px;}
+	#categories{padding:5px;}
+		#categories h4{float:left;margin:0 5px 0 0;line-height:24px;}
+		.selectorContainer{float:left;}
+			.selector span{display:inline-block;width:20px;}
+	.inputTextad{overflow:hidden;height:15px;margin-top:3px;padding:2px 7px;}
+	.characters .section{margin:-5px;margin-bottom:15px;}
+		.characters .section pre{float:left;min-width:42px;min-height:32px;line-height:32px;margin:5px;padding:4px;border:1px solid #E2E2E2;border-radius:3px;cursor:pointer;font-size:21px;text-align:center;}
+		.characters .section pre:hover{background:#F6F6F6;transition:0.3s;}
+	.characters p{text-align:center;}
+@media (max-width:600px) {
+.characters{padding:5px;}
+	#categories h4{float:none;margin:auto;text-align:center;}
+	.selectorContainer{float:none;margin:auto;}
+	.inputTextad{display:none;}
+		.inputTextad ins{display:none;}
+	.characters .section pre{overflow:hidden;width:auto;max-width:95%;}
+}

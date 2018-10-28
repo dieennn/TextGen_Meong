@@ -1,0 +1,22 @@
+div.textart{padding:10px;}
+	#categories{padding:5px;}
+		#categories h4{float:left;margin:0 5px 0 0;line-height:24px;}
+		.selectorContainer{float:left;}
+			.selector span{display:inline-block;width:20px;}
+	.textart .section{margin:-5px;margin-bottom:15px;}
+		.textart .section div{float:left;max-width:100%;}
+			.textart .section pre{display:block;overflow:hidden;margin:5px;padding:4px;border:1px solid #E2E2E2;border-radius:3px;cursor:pointer;font-size:8px;line-height:8px;font-family:'Droid Sans Mono','Courier New',Courier,monospace,Fixed;}
+			.textart .section div.sizeNormal pre{font-size:16px;line-height:16px;}
+			.textart .section pre:hover{background:#F6F6F6;transition:0.3s;}
+	.textart p{text-align:center;}
+	#example pre{font-family:'Droid Sans Mono','Courier New',Courier,monospace,Fixed;font-size:4px;line-height:4px;}
+
+@media (max-width:600px) {
+.textart{padding:5px;}
+	#categories h4{float:none;margin:auto;text-align:center;}
+	.selectorContainer{float:none;margin:auto;}
+}
+
+			
+			
+	
