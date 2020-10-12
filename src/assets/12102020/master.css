@@ -1,0 +1,767 @@
+html {
+  overflow-y: scroll
+}
+
+body {
+  position: relative;
+  margin: 0;
+  background: #e8e8e8 url(../imgs/body.gif) fixed 0 46px repeat-x;
+  font-family: droid sans, trebuchet ms, Verdana, Tahoma, Arial;
+  font-size: 14px;
+  line-height: 18px
+}
+
+a {
+  text-decoration: none;
+  color: #037aab;
+  transition: color .3s
+}
+
+a:hover {
+  color: #19aae7;
+  transition: color .3s
+}
+
+img {
+  border: 0
+}
+
+hr {
+  visibility: hidden;
+  clear: both;
+  margin: 0;
+  border-collapse: collapse;
+  border: 0;
+  height: 0
+}
+
+hr.visible {
+  visibility: visible;
+  height: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-bottom: 1px dashed #ccc
+}
+
+.article {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 0 #bbb
+}
+
+.control {
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  background: #f6f6f6
+}
+
+.gradientRed {
+  background-color: #e91b1b;
+  background: linear-gradient(#E91B1B 0%, #B10101 100%)
+}
+
+.gradientAzure {
+  background-color: #0d94cd;
+  background: linear-gradient(#19AAE7 0%, #037AAB 100%)
+}
+
+.gradientBlue {
+  background-color: #5f6975;
+  background: linear-gradient(#5F6975 0%, #4B545F 100%)
+}
+
+.gradientGray {
+  background-color: #f3f3f3;
+  background: linear-gradient(#FEFEFE 0%, #ECECEC 100%)
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.center {
+  text-align: center
+}
+
+input,
+textarea,
+select,
+pre {
+  box-sizing: border-box;
+  font-family: droid sans, lucida grande, tahoma, verdana
+}
+
+pre {
+  font-family: inherit
+}
+
+.msgCopy {
+  z-index: 99999;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background: #000;
+  border-radius: 3px;
+  opacity: .8;
+  color: #fff;
+  font-size: 12px;
+  text-shadow: none;
+  line-height: auto
+}
+
+.selectorContainer {
+  position: relative;
+  width: 100%
+}
+
+.selectorContainer .prev,
+.selectorContainer .next {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 34px;
+  line-height: 34px;
+  background: #999 url(../images/icons/icons.png) 0 0 no-repeat;
+  text-align: center;
+  cursor: default
+}
+
+.selectorContainer .prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  background-position: 10px -383px
+}
+
+.selectorContainer .next {
+  right: 0;
+  border-radius: 0 3px 3px 0;
+  background-position: 10px -357px
+}
+
+.selectorContainer .prev:hover,
+.selectorContainer .next:hover {
+  background-color: #666;
+  transition: background-color .3s
+}
+
+.selector {
+  height: 34px;
+  line-height: 34px;
+  margin: 0 31px;
+  padding: 0;
+  list-style: none;
+  text-shadow: none
+}
+
+.selector li {
+  background-color: #999
+}
+
+.selector li.init {
+  background: #999 url(../images/icons/icons.png) calc(100% + 70px) -408px no-repeat;
+  white-space: nowrap
+}
+
+.selector a {
+  display: block;
+  z-index: 9999;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #fff
+}
+
+.selector .flyout {
+  position: relative;
+  z-index: 9998;
+  display: none;
+  overflow-y: auto;
+  width: inherit;
+  max-height: 350px;
+  background: #999;
+  white-space: nowrap
+}
+
+.selector .flyout ul {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.selector .init:hover,
+.selector .flyout li:hover {
+  background-color: #666;
+  transition: background-color .3s
+}
+
+.selector .flyout .selected {
+  background: #aaa
+}
+
+#container {
+  width: 100%;
+  max-width: 928px;
+  margin: 0 auto;
+  padding-top: 56px
+}
+
+#header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  height: 46px;
+  width: 100%;
+  min-width: 150px;
+  color: #fff;
+  box-shadow: 0 2px 4px 0 #bbb
+}
+
+#hShare {
+  position: relative;
+  top: 13px;
+  left: 13px;
+  float: left;
+  height: 20px
+}
+
+#hShare a {
+  display: inline-block;
+  /* float: left; */
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  background: url(../images/icons/icons.png) 0 -442px no-repeat;
+  outline: none
+}
+
+#hShare .IG {
+  background-position: -20px -442px
+}
+
+#hShare .TW {
+  background-position: -40px -442px
+}
+
+#hShare .YT {
+  background-position: -60px -442px
+}
+
+#hShare .FB:hover {
+  background-position: 0 -462px
+}
+
+#hShare .IG:hover {
+  background-position: -20px -462px
+}
+
+#hShare .TW:hover {
+  background-position: -40px -462px
+}
+
+#hShare .YT:hover {
+  background-position: -60px -462px
+}
+
+#hLogo {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  height: 30px;
+  width: 170px;
+  margin-left: -85px
+}
+
+#hLogo h1 {
+  margin: 0;
+  font-size: 12px
+}
+
+#hLogo h1 img {
+  display: block
+}
+
+#hLangButton {
+  float: right;
+  background: transparent url(../images/icons/icons.png) 11px -240px no-repeat;
+  height: 20px;
+  padding: 14px 10px 14px 46px;
+  cursor: pointer
+}
+
+#hLangButton span {
+  font-size: 14px
+}
+
+#hMenuButton {
+  float: right;
+  display: none;
+  width: 46px;
+  height: 46px;
+  background: transparent url(../images/icons/icons.png) 11px -205px no-repeat;
+  cursor: pointer
+}
+
+/* #addTop {} */
+
+#languages {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  z-index: 9998;
+  right: 0;
+  top: 46px;
+  margin: 0 0 10px;
+  padding: 0;
+  border-radius: 0 0 0 4px;
+  list-style: none;
+  white-space: nowrap;
+  box-shadow: 2px 2px 4px 0 #bbb
+}
+
+#languages li {
+  padding: 0
+}
+
+#languages li a {
+  display: block;
+  padding: 7px 60px 7px 30px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  color: #666;
+  font-size: 13px
+}
+
+#languages li:last-of-type a {
+  border-bottom: none
+}
+
+#languages li a:hover,
+#languages li a.active {
+  background: #f6f6f6;
+  color: #000;
+  border-bottom: 1px solid #e2e2e2;
+  transition: .3s
+}
+
+#languages li:last-of-type a:hover,
+#languages li:last-of-type a.active {
+  border-bottom: none
+}
+
+.menu {
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 0 #bbb
+}
+
+.menu h2 {
+  margin: 0;
+  cursor: default
+}
+
+.menu h2 span {
+  display: block;
+  padding: 6px 7px 9px 35px;
+  background: url(../images/icons/icons.png) 10px 0 no-repeat;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 0 1px 0 #000
+}
+
+.menu h2.mytext span {
+  background-position: 10px 9px
+}
+
+.menu h2.textart span {
+  background-position: 10px -16px
+}
+
+.menu h2.related span {
+  background-position: 10px -41px
+}
+
+.menu h2.partners span {
+  background-position: 10px -66px
+}
+
+.menu h2.ad span {
+  background-position: 10px -91px
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.menu ul li {
+  padding: 0
+}
+
+.menu ul li a {
+  display: block;
+  padding: 7px 7px 7px 10px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  color: #666;
+  font-size: 13px
+}
+
+.menu ul li:last-of-type a {
+  border-bottom: none
+}
+
+.menu ul li a:hover,
+.menu ul li a.active {
+  background: #f6f6f6;
+  color: #000;
+  border-bottom: 1px solid #e2e2e2;
+  transition: .3s
+}
+
+.menu ul li:last-of-type a:hover,
+.menu ul li:last-of-type a.active {
+  border-bottom: none
+}
+
+#main {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  text-shadow: 0 1px 0 #fff
+}
+
+#sidebarLeft {
+  display: table-cell;
+  width: 170px;
+  vertical-align: top
+}
+
+#content {
+  display: table-cell;
+  padding: 0 10px;
+  vertical-align: top
+}
+
+#ticker {
+  overflow: hidden;
+  height: 18px;
+  padding-left: 25px;
+  background: url(../images/icons/icons.png) 0 -287px no-repeat
+}
+
+#ticker ul {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+#adMid {
+  margin-bottom: 10px
+}
+
+#sidebarLeft .ad .article {
+  border-radius: 0;
+  padding: 5px;
+  width: 160px;
+  margin-bottom: 0
+}
+
+.inputContainer {
+  padding: 7px
+}
+
+.inputStyler {
+  position: relative;
+  border: 1px solid #037aab;
+  border-radius: 3px
+}
+
+#textin,
+#textinTop,
+#textinBottom {
+  display: block;
+  height: 27px;
+  width: 100%;
+  margin: 0;
+  padding: 4px 26px 4px 4px;
+  background: 0 0 !important;
+  border: none;
+  line-height: 19px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  resize: none
+}
+
+.go {
+  display: none
+}
+
+.empty {
+  display: block;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 25px;
+  height: 25px;
+  background: url(../imgs/icons.png?v=1) -14px -118px no-repeat;
+  cursor: pointer
+}
+
+.inputTextad {
+  height: 17px;
+  margin-top: 3px;
+  padding: 1px 7px
+}
+
+.inputTextad ins {
+  height: 17px
+}
+
+#adBottom {
+  margin-bottom: 10px
+}
+
+.footer {
+  text-align: center;
+  cursor: default
+}
+
+.footer ul {
+  padding: 0;
+  list-style: none
+}
+
+.footer ul li {
+  display: inline-block;
+  height: 12px;
+  border-left: 1px solid #444;
+  margin-left: 8px;
+  padding-left: 8px;
+  line-height: 11px
+}
+
+.footer ul li:first-of-type {
+  border: 0
+}
+
+#topbutton.topbutton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 3px
+}
+
+#topbutton a {
+  display: block;
+  width: 40px;
+  height: 24px;
+  background: url(../images/icons/icons.png) 10px -185px no-repeat
+}
+
+@media(max-width:960px) {
+  #container {
+    width: 100%;
+    max-width: 738px
+  }
+
+  #hShare {
+    display: none
+  }
+
+  #hLogo {
+    position: relative;
+    float: left;
+    top: 11px;
+    left: 11px;
+    width: 153px;
+    margin-left: 0
+  }
+
+  #hLogo h1 {
+    margin: 0
+  }
+
+  @media all and (max-width:270px) {
+    #hLogo {
+      width: 24px;
+      overflow: hidden
+    }
+  }
+
+  #hLogo h1 img {
+    display: block;
+    height: 24px
+  }
+
+  #hLangButton {
+    float: right;
+    background: transparent url(../images/icons/icons.png) 11px -240px no-repeat;
+    height: 46px;
+    width: 46px;
+    padding: 0
+  }
+
+  #hLangButton span {
+    display: none
+  }
+
+  #hMenuButton {
+    display: block
+  }
+
+  #languages {
+    position: relative;
+    right: auto;
+    top: auto;
+    border-radius: 0
+  }
+
+  #languages li a {
+    padding: 12px 7px 12px 10px;
+    font-size: 15px
+  }
+
+  .menu {
+    margin-bottom: 0;
+    border-radius: 0
+  }
+
+  .menu ul li a {
+    padding: 12px 7px 12px 10px;
+    font-size: 15px
+  }
+
+  #main {
+    display: block
+  }
+
+  #sidebarLeft {
+    display: none;
+    width: 100%;
+    margin-bottom: 10px
+  }
+
+  #content {
+    display: block;
+    padding: 0
+  }
+
+  .bigscreen {
+    display: none
+  }
+
+  #textin,
+  #textinTop,
+  #textinBottom {
+    padding-right: 52px
+  }
+
+  .go {
+    display: block;
+    position: absolute;
+    right: 26px;
+    top: 1px;
+    width: 25px;
+    height: 25px;
+    background: url(../images/icons/icons.png?v=1) 7px -118px no-repeat;
+    cursor: pointer
+  }
+}
+
+@media(max-width:758px) {
+  .article {
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none
+  }
+
+  #container {
+    padding-top: 46px
+  }
+
+  #content {
+    background: #fff;
+    padding-top: 5px
+  }
+
+  #addTop {
+    margin-bottom: 0;
+    padding: 5px 0
+  }
+
+  #adMid {
+    margin-bottom: 0;
+    padding: 5px 0
+  }
+
+  #textin,
+  #textinTop,
+  #textinBottom {
+    height: 28px;
+    font-size: 16px
+  }
+
+  .inputTextad {
+    display: none
+  }
+
+  #adBottom {
+    margin-bottom: 0;
+    padding: 5px 0
+  }
+
+  .footer {
+    font-size: 12px
+  }
+
+  .footer ul {
+    margin: 0
+  }
+
+  .footer ul li {
+    display: block;
+    height: auto;
+    border: 0;
+    margin: 0;
+    padding: 0
+  }
+
+  .footer ul li a {
+    display: block;
+    padding: 15px;
+    font-size: 14px;
+    background: #fafafa;
+    border-bottom: 1px solid #eee
+  }
+
+  .footer ul li:nth-last-of-type(2) a {
+    border: 0
+  }
+
+  .footer ul li:nth-last-of-type(1) {
+    display: none
+  }
+
+  #topbutton a {
+    width: 70px;
+    height: 40px;
+    background: url(../images/icons/icons.png) 25px -176px no-repeat
+  }
+}
+
+@media screen and (orientation:landscape) {
+  .fix-orientation {
+    background: red
+  }
+}

@@ -11,7 +11,7 @@ import { LoadingController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home2.html'
 })
 export class HomePage {
 
