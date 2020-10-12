@@ -60,8 +60,7 @@ export class AboutPage {
       }
     ];
     let item = document.getElementsByTagName('ion-item').length;
-    for(let i = 0; i<item; i++) {
-      async function randomQuote() {
+      async function randomQuote(i) {
         const response = await fetch('https://api.quotable.io/random')
         const quote = await response.json()
 
@@ -84,7 +83,10 @@ export class AboutPage {
         `;
         document.getElementsByTagName('ion-item')[i].innerHTML = he;
       }
-      randomQuote()
+      
+    for(let i = 0; i<item; i++) {
+      randomQuote(i)
+      console.log(i)
     }
   }
 
