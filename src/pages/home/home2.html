@@ -1,0 +1,1273 @@
+<ion-header>
+    <ion-navbar>
+  <!--     <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button> -->
+      <ion-title>M3ong T3xt-G3n</ion-title>
+      <a class="button button-icon icon ion-settings"></a>
+          <ion-buttons end>
+        <button ion-button icon-only (click)="openModal()"  title="about">
+          <ion-icon name="md-information" color="dark"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content padding>
+  
+  
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <div id="input">
+        <div class="inputContainer control gradientGray">
+            <div class="inputStyler gradientAzure">
+                <textarea id="textin" data-value="Enter your text here!">Enter your text here!</textarea>
+                <span class="go" title="Go"></span><span class="empty" title="Clear all fields"></span>
+            </div>
+        </div>
+        <div class="inputTextad control">
+
+        </div>
+        <ul id="options">
+            <li class="optionToggle noselect" id="checkBreeze" title="bReEzE">αBс</li>
+            <li class="optionToggle noselect" id="checkReverse" title="Reverse">свα</li>
+            <li class="optionToggle noselect" id="checkBox" title="Boxed">[̲̅α̲̅][̲̅в̲̅]</li>
+            <li class="optionToggle noselect" id="checkWave" title="Waves">͠α͠в͠c</li>
+            <li class="optionToggle noselect" id="checkSmoke" title="Smoky">͕͗a͕͕͗в͕͗с͕͗</li>
+            <li class="optionToggle noselect" id="checkUpperline" title="Upperline">α̅в̅с</li>
+            <li class="optionToggle noselect" id="checkUnderline" title="Underline">α̲в̲с</li>
+            <li class="optionToggle noselect" id="checkStrike" title="Strikethrough">̶α̶в̶с̶</li>
+            <li><a href="https://www.messletters.com/en/stripes/" class="more" title="Go to the stripes page">more</a>
+            </li>
+        </ul>
+        <p class="experimental">
+            <!-- <span>Experimental styles are enabled. Experimental styles can cause the website to react slow and might not
+                display on all devices. <a href="https://www.messletters.com/en/?experimental=0">Disable</a></span> -->
+        </p>
+    </div>
+    <!-- <div id="addTop" class="article"> -->
+
+        <!-- <script>
+            if (detectWidth() >= 768) {
+                document.write(
+                    '<div data-aaad="true" data-aa-adunit="/232881841/MSL_728v_1" style="text-align:center;overflow:hidden;"></div>'
+                    );
+            } else {
+                document.write(
+                    '<div data-aaad="true" data-aa-adunit="/232881841/MSL_Mob_300v_1" style="text-align:center;max-height:' +
+                    detectWidth() + 'px;overflow:hidden;"></div>');
+            }
+        </script> -->
+    <!-- </div> -->
+
+    <div class="search control gradientGray"><input type="search" id="search" autocomplete="off"
+            placeholder="Style name search" /><span class="reset"></span></div>
+    <div id="output">
+        <div id="searchMsg" data-searchMsg="Your search returned no results. 😔">
+            <p></p>
+        </div>
+        <div id="output175" data-search="math serif bold " class="field gradientGray pread"
+            title="1. Math Serif Bold (EXPERIMENTAL) ☆ Rating: 3.81/5 (26866 likes / 8363 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>1. Math Serif Bold</div>
+                <div class="action">
+                    <span class="copy" title="Copy"></span>
+                    <!-- <span class="like" title="I like this" data-vote="175-1"></span>
+                        <span class="dislike" title="I dislike this" data-vote="175-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.fbgadgets.com"
+                title="Emoji, Symbols, Decorations and more for Facebook!! | 206 clicks" target="_blank"
+                data-aid="164">●●● (&cap;｀-&acute;)&sup;━━☆ﾟ.*･｡ﾟ ꧁FB Gadgets꧂ ❀&macr;\_(ツ) ●●●</a> --></div>
+        <div id="output163" data-search="math script (royal) bold writing" class="field gradientGray"
+            title="2. Math Script (Royal) Bold (EXPERIMENTAL) ☆ Rating: 3.81/5 (15918 likes / 4962 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>2. Math Script (Royal) Bold</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="163-1"></span><span class="dislike" title="I dislike this" data-vote="163-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output193" data-search="tai le " class="field gradientGray pread"
+            title="3. Tai Le ☆ Rating: 3.81/5 (16027 likes / 4996 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">3. Tai Le</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="193-1"></span><span class="dislike" title="I dislike this" data-vote="193-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.flipyourtext.com"
+                title="Flip, Mirror or Reverse your text with FlipYourText.com | 66 clicks" target="_blank"
+                data-aid="146">ʇxəʇdıๅɟ -- fliptext | ◔͜͡◔ Ｆｌｉｐ Ｙｏｕｒ Ｔｅｘｔ！ ◔͜͡◔ | fliptext -- ʇxəʇdıๅɟ</a> --></div>
+        <div id="output192" data-search="math serif italic " class="field gradientGray"
+            title="4. Math Serif Italic (EXPERIMENTAL) ☆ Rating: 3.81/5 (18002 likes / 5613 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>4. Math Serif Italic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="192-1"></span><span class="dislike" title="I dislike this" data-vote="192-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output169" data-search="monospace " class="field gradientGray pread"
+            title="5. Monospace (EXPERIMENTAL) ☆ Rating: 3.81/5 (13563 likes / 4229 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>5. Monospace</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="169-1"></span><span class="dislike" title="I dislike this" data-vote="169-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.weirdgenerator.com"
+                title="Get cool boxed text @ weirdgenerator.com | 90 clicks" target="_blank"
+                data-aid="2">(&hearts;‿&hearts;) ٩͡๏̯͡๏۶ツ【★】
+                ͔͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗W͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗E͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗I͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗R͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗D͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗G͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗E͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗N͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗E͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗R͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗A͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗T͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗O͔͔۪͔͔͔͔͗͗͗͗۫͗͗۰͔͔͗͗۰͔͔۪͔͔͔͔͗͗͗͗۫͗͗R͔͔۪͔͔͔͗͗͗͗۫͗۰͔͗
+                【★】ツ ٩͡๏̯͡๏۶(&hearts;‿&hearts;)</a> --></div>
+        <div id="output177" data-search="math serif bold italic " class="field gradientGray"
+            title="6. Math Serif Bold Italic (EXPERIMENTAL) ☆ Rating: 3.81/5 (25200 likes / 7858 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>6. Math Serif Bold Italic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="177-1"></span><span class="dislike" title="I dislike this" data-vote="177-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output119" data-search="lower upper light " class="field gradientGray pread"
+            title="7. Lower Upper Light ☆ Rating: 3.81/5 (13560 likes / 4229 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">7. Lower Upper Light</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="119-1"></span><span class="dislike" title="I dislike this" data-vote="119-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.stylemytext.com"
+                title="Create fancy text with our random styles generator. Choose out of hundreds of different styles! | 61 clicks"
+                target="_blank" data-aid="156">☠ (　-_･) ︻デ═一 ▸ Sᴛʏʟᴇ Mʏ Tᴇxᴛ (/❛o❛)/ ☠</a> --></div>
+        <div id="output176" data-search="math fraktur bold " class="field gradientGray"
+            title="8. Math Fraktur Bold (EXPERIMENTAL) ☆ Rating: 3.81/5 (13236 likes / 4128 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>8. Math Fraktur Bold</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="176-1"></span><span class="dislike" title="I dislike this" data-vote="176-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output179" data-search="math sans bold " class="field gradientGray pread"
+            title="9. Math Sans Bold (EXPERIMENTAL) ☆ Rating: 3.81/5 (16821 likes / 5247 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>9. Math Sans Bold</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="179-1"></span><span class="dislike" title="I dislike this" data-vote="179-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.zalgogenerator.com"
+                title="The Nezperdian hive-mind of chaos. Zalgo. Create Chaos and Horror with our Zalgo Generator. | 39 clicks"
+                target="_blank" data-aid="158">Z̾̽ảlg̀͐ͭ̽oͧG̀e̒̃nͪȅͪͫ̏̐r͌̑á͑t͌̑͛o̊r̓̐ - Zalgo Text Generator, Invoke
+                The Feeling Of Chaos </a> --></div>
+        <div id="output178" data-search="math sans " class="field gradientGray"
+            title="10. Math Sans (EXPERIMENTAL) ☆ Rating: 3.81/5 (15316 likes / 4778 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>10. Math Sans</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="178-1"></span><span class="dislike" title="I dislike this" data-vote="178-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <style>
+            .MessOutputGad {
+                margin-bottom: 25px;
+            }
+
+            @media (max-width:600px) {
+                .MessOutputGad {
+                    margin-bottom: 10px
+                }
+            }
+        </style>
+        <div class="MessOutputGad">
+
+            <!-- <script>
+                if (detectWidth() >= 768) {
+                    document.write(
+                        '<div data-aaad="true" data-aa-adunit="/232881841/MSL_728v_2" style="text-align:center;overflow:hidden;"></div>'
+                        );
+                } else {
+                    document.write(
+                        '<div data-aaad="true" data-aa-adunit="/232881841/MSL_Mob_300v_2" style="text-align:center;max-height:' +
+                        detectWidth() + 'px;overflow:hidden;"></div>');
+                }
+            </script> -->
+        </div>
+        <div id="stickyActivator"></div>
+        <div id="output180" data-search="math sans bold italic " class="field gradientGray pread"
+            title="11. Math Sans Bold Italic (EXPERIMENTAL) ☆ Rating: 3.81/5 (11074 likes / 3455 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>11. Math Sans Bold Italic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="180-1"></span><span class="dislike" title="I dislike this" data-vote="180-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.twotes.com"
+                title="Love, Friendship, Life and much more. Get the best Twitter Quotes on your Twitter! Every day! Follow us! | 14 clicks"
+                target="_blank" data-aid="144">◔͜͡◔ Get Quotes about Love, Life and Friendship on your Twitter! ◔͜͡◔</a> -->
+        </div>
+        <div id="output165" data-search="double struck " class="field gradientGray"
+            title="12. Double Struck (EXPERIMENTAL) ☆ Rating: 3.81/5 (10150 likes / 3167 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>12. Double Struck</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="165-1"></span><span class="dislike" title="I dislike this" data-vote="165-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output120" data-search="dwarf small tiny superscript" class="field gradientGray pread"
+            title="13. Dwarf ☆ Rating: 3.81/5 (8658 likes / 2702 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">13. Dwarf</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="120-1"></span><span class="dislike" title="I dislike this" data-vote="120-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.mychatname.com"
+                title="Lacking some name inspiration? Generate a cool name with MyChatName! | 40 clicks" target="_blank"
+                data-aid="152">&ordm;O&bull;❤&bull;.&cedil;✿&cedil;.&bull;❤&bull;.❀&bull; Chatname Inspiration
+                &bull;❀.&bull;❤&bull;.&cedil;✿&cedil;.&bull;❤&bull;O&ordm;</a> --></div>
+        <div id="output203" data-search="lilia " class="field gradientGray"
+            title="14. Lilia ☆ Rating: 3.81/5 (10369 likes / 3236 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">14. Lilia</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="203-1"></span><span class="dislike" title="I dislike this" data-vote="203-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output191" data-search="math script (royal) writing" class="field gradientGray pread"
+            title="15. Math Script (Royal) (EXPERIMENTAL) ☆ Rating: 3.81/5 (8766 likes / 2736 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>15. Math Script (Royal)</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="191-1"></span><span class="dislike" title="I dislike this" data-vote="191-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.oddsoflove.com"
+                title="Find out what your odds of love are with that cute boy or girl! OddsOfLove.com &hearts; | 7 clicks"
+                target="_blank" data-aid="1">&hearts;&hearts;&hearts; What are your odds of LOVE?
+                &hearts;&hearts;&hearts; 10%? 40%? Or maybe 100%? Find it out! &hearts;&hearts;&hearts;</a> --></div>
+        <div id="output181" data-search="math sans italic " class="field gradientGray"
+            title="16. Math Sans Italic (EXPERIMENTAL) ☆ Rating: 3.81/5 (10566 likes / 3299 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>16. Math Sans Italic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="181-1"></span><span class="dislike" title="I dislike this" data-vote="181-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output117" data-search="smooth " class="field gradientGray pread"
+            title="17. Smooth ☆ Rating: 3.81/5 (4765 likes / 1488 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">17. Smooth</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="117-1"></span><span class="dislike" title="I dislike this" data-vote="117-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.messroulette.com" rel="nofollow"
+                title="Messroulette - Find a random friend! | 27 clicks" target="_blank" data-aid="3">(॓_॔)
+                (&raquo;◡&laquo;) &hearts;╣[-_-]╠&hearts; (&hearts;‿&hearts;) 유웃 ★ MESS ROULETTE ★ 웃유
+                (&hearts;‿&hearts;) &hearts;╣[-_-]╠&hearts; (&raquo;◡&laquo;) (॓_॔) </a> --></div>
+        <div id="output216" data-search="messletters " class="field gradientGray"
+            title="18. Messletters ☆ Rating: 3.81/5 (3267 likes / 1021 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">18. Messletters</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="216-1"></span><span class="dislike" title="I dislike this" data-vote="216-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output162" data-search="math fraktur " class="field gradientGray pread"
+            title="19. Math Fraktur (EXPERIMENTAL) ☆ Rating: 3.81/5 (6507 likes / 2035 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>19. Math Fraktur</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="162-1"></span><span class="dislike" title="I dislike this" data-vote="162-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.weirdgenerator.com"
+                title="Get a cool text @ weirdgenerator.com. You can use your messletters text and pimp it on weirdgenerator! | 33 clicks"
+                target="_blank" data-aid="148">▂▃▅▆▇█ (⊙.⊙(☉_☉)⊙.⊙) █ Ｗ █ Ｅ █ Ｉ █ Ｒ █ Ｄ █ (⊙.⊙(☉_☉)⊙.⊙) █▇▆▅▃▂</a> --></div>
+        <div id="output221" data-search="tai le v2 " class="field gradientGray"
+            title="20. Tai Le v2 ☆ Rating: 3.81/5 (4451 likes / 1393 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">20. Tai Le v2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="221-1"></span><span class="dislike" title="I dislike this" data-vote="221-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output159" data-search="smooth v2 " class="field gradientGray pread"
+            title="21. Smooth v2 ☆ Rating: 3.81/5 (2537 likes / 794 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">21. Smooth v2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="159-1"></span><span class="dislike" title="I dislike this" data-vote="159-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.youtube.com/watch?v=MZdPcbhGUgw" rel="nofollow"
+                title="Follow The Curious Kiwis  【►】 on their Geocaching Adventures! | 8 clicks" target="_blank"
+                data-aid="167">【►】 New Zealand's LARGEST GEOCACHE!! Watch the Video here! 【►】</a> --></div>
+        <div id="output204" data-search="cherokee " class="field gradientGray"
+            title="22. Cherokee (EXPERIMENTAL) ☆ Rating: 3.81/5 (2578 likes / 807 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>22. Cherokee</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="204-1"></span><span class="dislike" title="I dislike this" data-vote="204-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output160" data-search="math script customized (royal) writing" class="field gradientGray pread"
+            title="23. Math Script Customized (Royal) (EXPERIMENTAL) ☆ Rating: 3.81/5 (5250 likes / 1644 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="exp"></span>23. Math Script Customized (Royal)</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="160-1"></span><span class="dislike" title="I dislike this" data-vote="160-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="ad"><!-- <a href="https://www.howtosavemoremoney.com"
+                title="Lots of tips and tricks on how to save more money! | 10 clicks" target="_blank"
+                data-aid="169">&euro; $$$ How to Save More Money? $$$ &euro;</a> --></div>
+        <div id="output116" data-search="classic " class="field gradientGray"
+            title="24. Classic ☆ Rating: 3.81/5 (4194 likes / 1314 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">24. Classic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="116-1"></span><span class="dislike" title="I dislike this" data-vote="116-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output217" data-search="africa " class="field gradientGray"
+            title="25. Africa ☆ Rating: 3.81/5 (1165 likes / 365 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">25. Africa</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="217-1"></span><span class="dislike" title="I dislike this" data-vote="217-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output182" data-search="lower upper refurbished " class="field gradientGray"
+            title="26. Lower Upper Refurbished ☆ Rating: 3.81/5 (3053 likes / 957 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">26. Lower Upper Refurbished</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="182-1"></span><span class="dislike" title="I dislike this" data-vote="182-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output174" data-search="circled black round" class="field gradientGray"
+            title="27. Circled Black ☆ Rating: 3.81/5 (2723 likes / 854 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">27. Circled Black</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="174-1"></span><span class="dislike" title="I dislike this" data-vote="174-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output134" data-search="fullwidth wide" class="field gradientGray"
+            title="28. Fullwidth ☆ Rating: 3.81/5 (4412 likes / 1384 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">28. Fullwidth</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="134-1"></span><span class="dislike" title="I dislike this" data-vote="134-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output208" data-search="greek v2 " class="field gradientGray"
+            title="29. Greek v2 ☆ Rating: 3.81/5 (1852 likes / 581 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">29. Greek v2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="208-1"></span><span class="dislike" title="I dislike this" data-vote="208-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output183" data-search="boxed block square" class="field gradientGray"
+            title="30. Boxed ☆ Rating: 3.81/5 (1667 likes / 523 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">30. Boxed</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="183-1"></span><span class="dislike" title="I dislike this" data-vote="183-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output223" data-search="tai le v2 ft. canadian curly " class="field gradientGray"
+            title="31. Tai Le v2 ft. Canadian Curly ☆ Rating: 3.8/5 (4108 likes / 1292 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">31. Tai Le v2 ft. Canadian Curly</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="223-1"></span><span class="dislike" title="I dislike this" data-vote="223-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output166" data-search="carrier round" class="field gradientGray"
+            title="32. Carrier ☆ Rating: 3.8/5 (1592 likes / 501 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">32. Carrier</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="166-1"></span><span class="dislike" title="I dislike this" data-vote="166-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output173" data-search="lower upper bold " class="field gradientGray"
+            title="33. Lower Upper Bold ☆ Rating: 3.8/5 (1761 likes / 555 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">33. Lower Upper Bold</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="173-1"></span><span class="dislike" title="I dislike this" data-vote="173-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output207" data-search="cute v3 " class="field gradientGray"
+            title="34. Cute v3 ☆ Rating: 3.8/5 (1046 likes / 330 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">34. Cute v3</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="207-1"></span><span class="dislike" title="I dislike this" data-vote="207-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output184" data-search="boxed black block square" class="field gradientGray"
+            title="35. Boxed Black ☆ Rating: 3.8/5 (2052 likes / 649 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">35. Boxed Black</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="184-1"></span><span class="dislike" title="I dislike this" data-vote="184-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output212" data-search="diagonal stripes line" class="field gradientGray"
+            title="36. Diagonal Stripes ☆ Rating: 3.8/5 (1365 likes / 432 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">36. Diagonal Stripes</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="212-1"></span><span class="dislike" title="I dislike this" data-vote="212-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output148" data-search="gothic " class="field gradientGray"
+            title="37. Gothic ☆ Rating: 3.8/5 (662 likes / 210 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">37. Gothic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="148-1"></span><span class="dislike" title="I dislike this" data-vote="148-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output132" data-search="circled round" class="field gradientGray"
+            title="38. Circled ☆ Rating: 3.8/5 (2055 likes / 652 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">38. Circled</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="132-1"></span><span class="dislike" title="I dislike this" data-vote="132-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output190" data-search="mirrorflip " class="field gradientGray"
+            title="39. MirrorFlip ☆ Rating: 3.8/5 (1021 likes / 324 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">39. MirrorFlip</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="190-1"></span><span class="dislike" title="I dislike this" data-vote="190-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output214" data-search="coptic standard " class="field gradientGray"
+            title="40. Coptic Standard ☆ Rating: 3.8/5 (1345 likes / 427 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">40. Coptic Standard</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="214-1"></span><span class="dislike" title="I dislike this" data-vote="214-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output128" data-search="cjk " class="field gradientGray"
+            title="41. CJK ☆ Rating: 3.79/5 (1054 likes / 337 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">41. CJK</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="128-1"></span><span class="dislike" title="I dislike this" data-vote="128-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output215" data-search="coptic fancy " class="field gradientGray"
+            title="42. Coptic Fancy ☆ Rating: 3.79/5 (905 likes / 290 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">42. Coptic Fancy</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="215-1"></span><span class="dislike" title="I dislike this" data-vote="215-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output220" data-search="african unicase 1982 " class="field gradientGray"
+            title="43. African Unicase 1982 ☆ Rating: 3.78/5 (667 likes / 215 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">43. African Unicase 1982</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="220-1"></span><span class="dislike" title="I dislike this" data-vote="220-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output206" data-search="cute v2 " class="field gradientGray"
+            title="44. Cute v2 ☆ Rating: 3.78/5 (672 likes / 217 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">44. Cute v2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="206-1"></span><span class="dislike" title="I dislike this" data-vote="206-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output158" data-search="handwrite " class="field gradientGray"
+            title="45. Handwrite ☆ Rating: 3.78/5 (1017 likes / 329 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">45. Handwrite</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="158-1"></span><span class="dislike" title="I dislike this" data-vote="158-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output188" data-search="strikethrough " class="field gradientGray"
+            title="46. Strikethrough ☆ Rating: 3.78/5 (731 likes / 237 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">46. Strikethrough</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="188-1"></span><span class="dislike" title="I dislike this" data-vote="188-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output218" data-search="pan nigerian " class="field gradientGray"
+            title="47. Pan Nigerian ☆ Rating: 3.78/5 (370 likes / 120 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">47. Pan Nigerian</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="218-1"></span><span class="dislike" title="I dislike this" data-vote="218-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output213" data-search="diagonal stripes 2 line" class="field gradientGray"
+            title="48. Diagonal Stripes 2 ☆ Rating: 3.77/5 (612 likes / 199 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">48. Diagonal Stripes 2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="213-1"></span><span class="dislike" title="I dislike this" data-vote="213-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output144" data-search="bigone " class="field gradientGray"
+            title="49. BigOne ☆ Rating: 3.77/5 (393 likes / 128 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">49. BigOne</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="144-1"></span><span class="dislike" title="I dislike this" data-vote="144-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output202" data-search="black panther " class="field gradientGray"
+            title="50. Black Panther ☆ Rating: 3.77/5 (806 likes / 263 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">50. Black Panther</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="202-1"></span><span class="dislike" title="I dislike this" data-vote="202-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output224" data-search="scammer " class="field gradientGray"
+            title="51. Scammer (NEW) ☆ Rating: 3.77/5 (1095 likes / 358 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info"><span class="new"></span>51. Scammer</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="224-1"></span><span class="dislike" title="I dislike this" data-vote="224-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output149" data-search="love " class="field gradientGray"
+            title="52. Love ☆ Rating: 3.77/5 (810 likes / 265 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">52. Love</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="149-1"></span><span class="dislike" title="I dislike this" data-vote="149-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output122" data-search="awesome " class="field gradientGray"
+            title="53. Awesome ☆ Rating: 3.76/5 (712 likes / 234 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">53. Awesome</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="122-1"></span><span class="dislike" title="I dislike this" data-vote="122-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output167" data-search="carrierii " class="field gradientGray"
+            title="54. CarrierII ☆ Rating: 3.76/5 (626 likes / 206 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">54. CarrierII</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="167-1"></span><span class="dislike" title="I dislike this" data-vote="167-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output147" data-search="swipe " class="field gradientGray"
+            title="55. Swipe ☆ Rating: 3.76/5 (341 likes / 113 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">55. Swipe</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="147-1"></span><span class="dislike" title="I dislike this" data-vote="147-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output131" data-search="russian " class="field gradientGray"
+            title="56. Russian ☆ Rating: 3.75/5 (609 likes / 202 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">56. Russian</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="131-1"></span><span class="dislike" title="I dislike this" data-vote="131-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output196" data-search="yi three " class="field gradientGray"
+            title="57. Yi Three ☆ Rating: 3.75/5 (815 likes / 272 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">57. Yi Three</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="196-1"></span><span class="dislike" title="I dislike this" data-vote="196-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output152" data-search="1337 " class="field gradientGray"
+            title="58. 1337 ☆ Rating: 3.74/5 (477 likes / 161 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">58. 1337</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="152-1"></span><span class="dislike" title="I dislike this" data-vote="152-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output136" data-search="greek " class="field gradientGray"
+            title="59. Greek ☆ Rating: 3.73/5 (500 likes / 171 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">59. Greek</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="136-1"></span><span class="dislike" title="I dislike this" data-vote="136-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output222" data-search="canadian curly " class="field gradientGray"
+            title="60. Canadian Curly ☆ Rating: 3.72/5 (461 likes / 159 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">60. Canadian Curly</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="222-1"></span><span class="dislike" title="I dislike this" data-vote="222-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output130" data-search="celtic " class="field gradientGray"
+            title="61. Celtic ☆ Rating: 3.7/5 (344 likes / 121 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">61. Celtic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="130-1"></span><span class="dislike" title="I dislike this" data-vote="130-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output143" data-search="writing " class="field gradientGray"
+            title="62. Writing ☆ Rating: 3.69/5 (432 likes / 153 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">62. Writing</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="143-1"></span><span class="dislike" title="I dislike this" data-vote="143-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output219" data-search="african 1978 " class="field gradientGray"
+            title="63. African 1978 ☆ Rating: 3.68/5 (363 likes / 130 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">63. African 1978</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="219-1"></span><span class="dislike" title="I dislike this" data-vote="219-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output194" data-search="yi one " class="field gradientGray"
+            title="64. Yi One ☆ Rating: 3.67/5 (387 likes / 140 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">64. Yi One</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="194-1"></span><span class="dislike" title="I dislike this" data-vote="194-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output154" data-search="fancycurly " class="field gradientGray"
+            title="65. FancyCurly ☆ Rating: 3.67/5 (453 likes / 165 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">65. FancyCurly</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="154-1"></span><span class="dislike" title="I dislike this" data-vote="154-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output157" data-search="swirly " class="field gradientGray"
+            title="66. Swirly ☆ Rating: 3.6/5 (338 likes / 131 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">66. Swirly</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="157-1"></span><span class="dislike" title="I dislike this" data-vote="157-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output124" data-search="cute v1 " class="field gradientGray"
+            title="67. Cute v1 ☆ Rating: 3.6/5 (342 likes / 133 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">67. Cute v1</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="124-1"></span><span class="dislike" title="I dislike this" data-vote="124-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output209" data-search="sticks " class="field gradientGray"
+            title="68. Sticks ☆ Rating: 3.59/5 (332 likes / 130 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">68. Sticks</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="209-1"></span><span class="dislike" title="I dislike this" data-vote="209-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output199" data-search="yi six " class="field gradientGray"
+            title="69. Yi Six ☆ Rating: 3.59/5 (348 likes / 137 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">69. Yi Six</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="199-1"></span><span class="dislike" title="I dislike this" data-vote="199-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output205" data-search="russian v2 " class="field gradientGray"
+            title="70. Russian v2 ☆ Rating: 3.59/5 (279 likes / 110 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">70. Russian v2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="205-1"></span><span class="dislike" title="I dislike this" data-vote="205-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output210" data-search="emoji " class="field gradientGray"
+            title="71. Emoji ☆ Rating: 3.58/5 (559 likes / 222 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">71. Emoji</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="210-1"></span><span class="dislike" title="I dislike this" data-vote="210-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output197" data-search="yi four " class="field gradientGray"
+            title="72. Yi Four ☆ Rating: 3.57/5 (243 likes / 97 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">72. Yi Four</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="197-1"></span><span class="dislike" title="I dislike this" data-vote="197-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output211" data-search="malayalam " class="field gradientGray"
+            title="73. Malayalam ☆ Rating: 3.56/5 (398 likes / 161 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">73. Malayalam</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="211-1"></span><span class="dislike" title="I dislike this" data-vote="211-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output155" data-search="cranky " class="field gradientGray"
+            title="74. Cranky ☆ Rating: 3.54/5 (251 likes / 104 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">74. Cranky</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="155-1"></span><span class="dislike" title="I dislike this" data-vote="155-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output135" data-search="stupid " class="field gradientGray"
+            title="75. Stupid ☆ Rating: 3.52/5 (263 likes / 111 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">75. Stupid</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="135-1"></span><span class="dislike" title="I dislike this" data-vote="135-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output164" data-search="curly " class="field gradientGray"
+            title="76. Curly ☆ Rating: 3.5/5 (227 likes / 97 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">76. Curly</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="164-1"></span><span class="dislike" title="I dislike this" data-vote="164-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output137" data-search="mirror " class="field gradientGray"
+            title="77. Mirror ☆ Rating: 3.44/5 (273 likes / 124 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">77. Mirror</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="137-1"></span><span class="dislike" title="I dislike this" data-vote="137-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output156" data-search="fasion " class="field gradientGray"
+            title="78. Fasion ☆ Rating: 3.43/5 (256 likes / 117 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">78. Fasion</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="156-1"></span><span class="dislike" title="I dislike this" data-vote="156-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output115" data-search="strange " class="field gradientGray"
+            title="79. Strange ☆ Rating: 3.41/5 (203 likes / 95 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">79. Strange</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="115-1"></span><span class="dislike" title="I dislike this" data-vote="115-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output201" data-search="yi eight " class="field gradientGray"
+            title="80. Yi Eight ☆ Rating: 3.41/5 (250 likes / 117 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">80. Yi Eight</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="201-1"></span><span class="dislike" title="I dislike this" data-vote="201-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output172" data-search="drako " class="field gradientGray"
+            title="81. DraKo ☆ Rating: 3.37/5 (253 likes / 122 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">81. DraKo</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="172-1"></span><span class="dislike" title="I dislike this" data-vote="172-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output133" data-search="parenthesized " class="field gradientGray"
+            title="82. Parenthesized ☆ Rating: 3.35/5 (257 likes / 127 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">82. Parenthesized</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="133-1"></span><span class="dislike" title="I dislike this" data-vote="133-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output141" data-search="ribbon " class="field gradientGray"
+            title="83. Ribbon ☆ Rating: 3.32/5 (203 likes / 103 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">83. Ribbon</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="141-1"></span><span class="dislike" title="I dislike this" data-vote="141-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output195" data-search="yi two " class="field gradientGray"
+            title="84. Yi Two ☆ Rating: 3.29/5 (191 likes / 99 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">84. Yi Two</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="195-1"></span><span class="dislike" title="I dislike this" data-vote="195-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output121" data-search="attila " class="field gradientGray"
+            title="85. Attila ☆ Rating: 3.29/5 (198 likes / 103 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">85. Attila</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="121-1"></span><span class="dislike" title="I dislike this" data-vote="121-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output129" data-search="dotted " class="field gradientGray"
+            title="86. Dotted ☆ Rating: 3.28/5 (175 likes / 92 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">86. Dotted</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="129-1"></span><span class="dislike" title="I dislike this" data-vote="129-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output171" data-search="facebook 2 " class="field gradientGray"
+            title="87. Facebook 2 ☆ Rating: 3.13/5 (171 likes / 102 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">87. Facebook 2</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="171-1"></span><span class="dislike" title="I dislike this" data-vote="171-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output118" data-search="hyves " class="field gradientGray"
+            title="88. Hyves ☆ Rating: 3.07/5 (189 likes / 119 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">88. Hyves</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="118-1"></span><span class="dislike" title="I dislike this" data-vote="118-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output185" data-search="awcute " class="field gradientGray"
+            title="89. AwCute ☆ Rating: 3.05/5 (146 likes / 93 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">89. AwCute</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="185-1"></span><span class="dislike" title="I dislike this" data-vote="185-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output150" data-search="flip " class="field gradientGray"
+            title="90. Flip ☆ Rating: 3.05/5 (187 likes / 120 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">90. Flip</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="150-1"></span><span class="dislike" title="I dislike this" data-vote="150-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output170" data-search="facebook " class="field gradientGray"
+            title="91. Facebook ☆ Rating: 2.99/5 (183 likes / 123 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">91. Facebook</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="170-1"></span><span class="dislike" title="I dislike this" data-vote="170-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output139" data-search="maniac " class="field gradientGray"
+            title="92. Maniac ☆ Rating: 2.95/5 (148 likes / 103 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">92. Maniac</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="139-1"></span><span class="dislike" title="I dislike this" data-vote="139-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output138" data-search="twisted " class="field gradientGray"
+            title="93. Twisted ☆ Rating: 2.94/5 (176 likes / 123 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">93. Twisted</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="138-1"></span><span class="dislike" title="I dislike this" data-vote="138-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output145" data-search="wiggly " class="field gradientGray"
+            title="94. Wiggly ☆ Rating: 2.88/5 (179 likes / 132 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">94. Wiggly</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="145-1"></span><span class="dislike" title="I dislike this" data-vote="145-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output200" data-search="yi seven " class="field gradientGray"
+            title="95. Yi Seven ☆ Rating: 2.87/5 (137 likes / 102 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">95. Yi Seven</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="200-1"></span><span class="dislike" title="I dislike this" data-vote="200-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output142" data-search="crazy " class="field gradientGray"
+            title="96. Crazy ☆ Rating: 2.86/5 (165 likes / 123 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">96. Crazy</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="142-1"></span><span class="dislike" title="I dislike this" data-vote="142-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output198" data-search="yi five " class="field gradientGray"
+            title="97. Yi Five ☆ Rating: 2.83/5 (138 likes / 106 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">97. Yi Five</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="198-1"></span><span class="dislike" title="I dislike this" data-vote="198-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output123" data-search="hazy " class="field gradientGray"
+            title="98. Hazy ☆ Rating: 2.77/5 (135 likes / 109 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">98. Hazy</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="123-1"></span><span class="dislike" title="I dislike this" data-vote="123-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output186" data-search="faux ethiopic " class="field gradientGray"
+            title="99. Faux Ethiopic ☆ Rating: 2.74/5 (180 likes / 149 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">99. Faux Ethiopic</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="186-1"></span><span class="dislike" title="I dislike this" data-vote="186-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output153" data-search="slammer " class="field gradientGray"
+            title="100. Slammer ☆ Rating: 2.72/5 (176 likes / 148 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">100. Slammer</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="153-1"></span><span class="dislike" title="I dislike this" data-vote="153-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output140" data-search="tamil " class="field gradientGray"
+            title="101. Tamil ☆ Rating: 2.65/5 (197 likes / 174 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">101. Tamil</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="140-1"></span><span class="dislike" title="I dislike this" data-vote="140-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div id="output146" data-search="big momma huge mega" class="field gradientGray"
+            title="102. Big Momma ☆ Rating: 2.63/5 (300 likes / 271 dislikes)">
+            <div class="output" contenteditable="false" spellcheck="false"></div>
+            <div class="interact">
+                <div class="info">102. Big Momma</div>
+                <div class="action"><span class="copy" title="Copy"></span><!-- <span class="like" title="I like this"
+                        data-vote="146-1"></span><span class="dislike" title="I dislike this" data-vote="146-0"></span> -->
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+
+</ion-content>
