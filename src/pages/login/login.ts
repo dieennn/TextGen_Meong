@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -29,6 +29,18 @@ export class LoginPage {
 
   public closeModal(){
     this.viewCtrl.dismiss();
+  }
+
+  public logoutGoogle(){
+    initializeApp(firebaseConfig);
+    const auth = getAuth();
+    
+    signOut(auth).then(() => {
+      localStorage.removeItem("uid");
+      this.viewCtrl.dismiss();
+    }).catch((error) => {
+      console.log("error")
+    });
   }
 
   public loginGoogle(){
