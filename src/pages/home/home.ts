@@ -4,6 +4,8 @@ import {NavController, IonicPage} from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 
+// import {isLogin} from "../../helper/auth.js"
+
 // import { Platform } from 'ionic-angular';
 //import {Autosize} from 'angular2-autosize';
 //import * as $ from 'jquery';
@@ -35,8 +37,9 @@ export class HomePage {
 	}
 //modal
 //modal
-	loginGoogle(){
-    console.log("login Google")
+	login(){
+    var loginPage = this.modalCtrl.create('LoginPage');
+    loginPage.present();
 	}
 //modal
 
