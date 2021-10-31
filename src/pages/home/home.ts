@@ -29,9 +29,14 @@ export class HomePage {
   }*/
 //modal
 	openModal(){
-	    var data = { message : 'hello world' };
-	    var modalPage = this.modalCtrl.create('ModalPage',data);
-	    modalPage.present();
+    var data = { message : 'hello world' };
+    var modalPage = this.modalCtrl.create('ModalPage',data);
+    modalPage.present();
+	}
+//modal
+//modal
+	loginGoogle(){
+    console.log("login Google")
 	}
 //modal
 
