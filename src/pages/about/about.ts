@@ -19,19 +19,18 @@ import { HomePage } from '../home/home';
 export class AboutPage {
 
   constructor(public navCtrl: NavController, 
-  	public viewCtrl : ViewController,
-  	public navParams: NavParams) {
+    public viewCtrl : ViewController,
+    public navParams: NavParams) {
   }
 
   /*Close*/
   public home(){
-  	/*this.navCtrl.push('HomePage2')*/
-  	this.navCtrl.setRoot(HomePage);
+    /*this.navCtrl.push('HomePage2')*/
+    this.navCtrl.setRoot(HomePage);
   }
   /*Close*/
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AboutPage');
     let data = [
       {
         id: 1,
@@ -161,7 +160,6 @@ export class AboutPage {
       
     for(let i = 0; i<data.length; i++) {
       randomQuote(i)
-      console.log(data[i])
     }
   }
 
