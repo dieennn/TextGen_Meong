@@ -1,12 +1,9 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { initializeApp } from "@firebase/app";
+import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ViewController } from 'ionic-angular';
-
-// import {isLogin} from "../../util/auth.js"
-import {firebaseConfig} from "../../../key/google.js"
 
 /**
  * Generated class for the LoginPage page.
@@ -32,7 +29,15 @@ export class LoginPage {
   }
 
   public logoutGoogle(){
-    initializeApp(firebaseConfig);
+    initializeApp({
+      apiKey: "AIzaSyBh1P3vwAMriN1GtYzt1-o32N0HMmVyBrA",
+      authDomain: "sidemenu-703cc.firebaseapp.com",
+      databaseURL: "https://sidemenu-703cc.firebaseio.com",
+      projectId: "sidemenu-703cc",
+      storageBucket: "sidemenu-703cc.appspot.com",
+      messagingSenderId: "721543360739",
+      appId: "1:721543360739:web:3f3bbae1ca6603bd",
+    });
     const auth = getAuth();
     
     signOut(auth).then(() => {
@@ -44,7 +49,15 @@ export class LoginPage {
   }
 
   public loginGoogle(){
-    initializeApp(firebaseConfig);
+    initializeApp({
+      apiKey: "AIzaSyBh1P3vwAMriN1GtYzt1-o32N0HMmVyBrA",
+      authDomain: "sidemenu-703cc.firebaseapp.com",
+      databaseURL: "https://sidemenu-703cc.firebaseio.com",
+      projectId: "sidemenu-703cc",
+      storageBucket: "sidemenu-703cc.appspot.com",
+      messagingSenderId: "721543360739",
+      appId: "1:721543360739:web:3f3bbae1ca6603bd",
+    });
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, provider)
