@@ -1,9 +1,10 @@
 import { initializeApp } from "@firebase/app";
-import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 
-import { ViewController } from 'ionic-angular';
+import {encryptedText} from "../../helper/secure.js"
+import {authGoogle, keyLocalStorage} from "../../helper/environment.js"
 
 /**
  * Generated class for the LoginPage page.
@@ -18,60 +19,55 @@ import { ViewController } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  icons: string[];
+  items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, 
+  constructor(
+    public modalCtrl : ModalController,
+    public navCtrl: NavController, 
     public viewCtrl : ViewController,
     public navParams: NavParams) {
+
+      this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+      'american-football', 'boat', 'bluetooth', 'build'];
+
+      this.items = [];
+      for(let i = 1; i < 11; i++) {
+        this.items.push({
+          title: 'Item ' + i,
+          note: 'This is item #' + i,
+          icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+        });
+      }
+  }
+
+  itemTapped() {
+    const localUser = localStorage.getItem(keyLocalStorage);
+    if(localUser) {
+      const data = JSON.parse(decryptedText(localUser));
+      console.log(data)
+    }
   }
 
   public closeModal(){
     this.viewCtrl.dismiss();
   }
 
-  public logoutGoogle(){
-    initializeApp({
-      apiKey: "AIzaSyBh1P3vwAMriN1GtYzt1-o32N0HMmVyBrA",
-      authDomain: "sidemenu-703cc.firebaseapp.com",
-      databaseURL: "https://sidemenu-703cc.firebaseio.com",
-      projectId: "sidemenu-703cc",
-      storageBucket: "sidemenu-703cc.appspot.com",
-      messagingSenderId: "721543360739",
-      appId: "1:721543360739:web:3f3bbae1ca6603bd",
-    });
-    const auth = getAuth();
-    
-    signOut(auth).then(() => {
-      localStorage.removeItem("uid");
-      this.viewCtrl.dismiss();
-    }).catch((error) => {
-      console.log("error")
-    });
+  config() {
+    return authGoogle
   }
 
   public loginGoogle(){
-    initializeApp({
-      apiKey: "AIzaSyBh1P3vwAMriN1GtYzt1-o32N0HMmVyBrA",
-      authDomain: "sidemenu-703cc.firebaseapp.com",
-      databaseURL: "https://sidemenu-703cc.firebaseio.com",
-      projectId: "sidemenu-703cc",
-      storageBucket: "sidemenu-703cc.appspot.com",
-      messagingSenderId: "721543360739",
-      appId: "1:721543360739:web:3f3bbae1ca6603bd",
-    });
+    initializeApp(this.config());
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, provider)
     .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      console.log(credential)
-      console.log(token)
-      console.log(user)
-      console.log(result)
-      localStorage.setItem("uid", user.uid)
+      const strUser = JSON.stringify(result.user);
+      localStorage.setItem(keyLocalStorage, encryptedText(strUser));
+
+      this.closeModal();
+      this.modalCtrl.create('ProfilePage').present();
       // ...
     }).catch((error) => {
       // Handle Errors here.

@@ -4,7 +4,7 @@ import {NavController, IonicPage} from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 
-// import {isLogin} from "../../helper/auth.js"
+import {isLogin} from "../../helper/auth.js"
 
 // import { Platform } from 'ionic-angular';
 //import {Autosize} from 'angular2-autosize';
@@ -16,6 +16,7 @@ import { LoadingController } from 'ionic-angular';
   templateUrl: 'home2.html'
 })
 export class HomePage {
+  isLogin: boolean
 
 
   constructor(public navCtrl: NavController, 
@@ -37,9 +38,12 @@ export class HomePage {
 	}
 //modal
 //modal
-	login(){
-    var loginPage = this.modalCtrl.create('LoginPage');
-    loginPage.present();
+	loginProfile(){
+    if(isLogin()) {
+      this.modalCtrl.create('ProfilePage').present();
+    } else {
+      this.modalCtrl.create('LoginPage').present();
+    }
 	}
 //modal
 
@@ -50,5 +54,9 @@ export class HomePage {
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
+  }
+
+  ionViewDidLoad() {
+    this.isLogin = isLogin();
   }
 }
