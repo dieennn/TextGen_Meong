@@ -41,14 +41,6 @@ export class LoginPage {
       }
   }
 
-  itemTapped() {
-    const localUser = localStorage.getItem(keyLocalStorage);
-    if(localUser) {
-      const data = JSON.parse(decryptedText(localUser));
-      console.log(data)
-    }
-  }
-
   public closeModal(){
     this.viewCtrl.dismiss();
   }
