@@ -9,8 +9,8 @@
       <button ion-button icon-only (click)="openModal()" title="about">
         <ion-icon name="md-information" color="dark"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="login()" title="Login with Google">
-        <ion-icon name="logo-google" color="dark"></ion-icon>
+      <button ion-button icon-only (click)="loginProfile()" (title)="isLogin ? 'Profile' : 'Login'">
+        <ion-icon name="md-contact"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

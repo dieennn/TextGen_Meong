@@ -16,12 +16,17 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button icon-start outline (click)="loginGoogle()">
+  <!-- <ul>
+    <li *ngFor="let p of items">
+      {{p.title}} | {{p.note}} | {{p.icon}}
+    </li>
+  </ul> -->
+  <!-- <button ion-button icon-start outline (click)="itemTapped($event, 1)">
+    Tapp
+    <ion-icon name="home"></ion-icon>
+  </button> -->
+  <button ion-button icon-end outline (click)="loginGoogle()">
     Login
-    <ion-icon name="home"></ion-icon>
-  </button>
-  <button ion-button icon-end color="danger" outline (click)="logoutGoogle()">
-    Logout
-    <ion-icon name="home"></ion-icon>
+    <ion-icon name="logo-google"></ion-icon>
   </button>
 </ion-content>
