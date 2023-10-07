@@ -4,7 +4,7 @@ import {NavController, IonicPage} from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 
-import {isLogin} from "../../helper/auth.js"
+import {isLogin} from "../../helper/auth"
 
 // import { Platform } from 'ionic-angular';
 //import {Autosize} from 'angular2-autosize';

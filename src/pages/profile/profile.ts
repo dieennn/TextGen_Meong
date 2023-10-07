@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
-import { decryptedText } from "../../helper/secure.js"
-import { authGoogle, keyLocalStorage } from "../../helper/environment.js"
+import { decryptedText } from "../../helper/secure"
+import { authGoogle, keyLocalStorage } from "../../helper/environment"
 
 import { initializeApp } from "@firebase/app";
 import { getAuth, signOut } from "@firebase/auth";

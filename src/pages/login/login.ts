@@ -3,8 +3,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 
-import {encryptedText} from "../../helper/secure.js"
-import {authGoogle, keyLocalStorage} from "../../helper/environment.js"
+import {encryptedText} from "../../helper/secure"
+import {authGoogle, keyLocalStorage} from "../../helper/environment"
 
 /**
  * Generated class for the LoginPage page.
@@ -62,6 +62,7 @@ export class LoginPage {
       this.modalCtrl.create('ProfilePage').present();
       // ...
     }).catch((error) => {
+      console.log(error)
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
