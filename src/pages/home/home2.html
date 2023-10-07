@@ -80,11 +80,16 @@
       title="1. Math Serif Bold (EXPERIMENTAL)">
       <div class="output" contenteditable="false" spellcheck="false"></div>
       <div class="interact">
-        <div class="info"><span class="exp"></span>1. Math Serif Bold</div>
+        <div class="info"><span class="exp"></span>1. Math Serif Bolds</div>
         <div class="action">
-          <span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this" data-vote="175-1"></span>
-                        <span class="dislike" title="I dislike this" data-vote="175-0"></span> -->
+          <span class="copy" title="Copye"></span>
+          <span title="getVote">
+            <button (click)="onVote()" title="close">
+              <ion-icon name="md-close" isActive="false"></ion-icon>
+            </button>
+          </span>
+          <span class="like" title="I like this" (click)="onVote('math serif bold', '175-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math serif bold', '175-0')"></span>
         </div>
         <hr />
       </div>
@@ -100,8 +105,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>2. Math Script (Royal) Bold</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="163-1"></span><span class="dislike" title="I dislike this" data-vote="163-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math script (royal) bold', '163-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math script (royal) bold', '163-0')"></span>
         </div>
         <hr />
       </div>
@@ -111,8 +116,8 @@
       <div class="interact">
         <div class="info">3. Tai Le</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="193-1"></span><span class="dislike" title="I dislike this" data-vote="193-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('tai le', '193-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('tai le', '193-0')"></span>
         </div>
         <hr />
       </div>
