@@ -5,6 +5,8 @@ import { ModalController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 
 import {isLogin} from "../../helper/auth"
+import { VoteService } from '../../service/vote.service';
+import { splitIdType, getUserLogin } from '../../helper/formatter';
 
 // import { Platform } from 'ionic-angular';
 //import {Autosize} from 'angular2-autosize';
@@ -19,12 +21,54 @@ export class HomePage {
   isLogin: boolean
 
 
-  constructor(public navCtrl: NavController, 
+  constructor(
+    public vote: VoteService,
+    public navCtrl: NavController, 
   	public modalCtrl : ModalController,
   	public loadingCtrl: LoadingController) {
     /*platform.registerBackButtonAction(() => {
       console.log("backPressed 1");
     },1);*/
+  }
+
+  
+  
+  async onVote(text_name: string, idText?: string): Promise<void> {
+    try {
+      const { uid, ...user } = getUserLogin()
+      const {id, type} = splitIdType(idText)
+
+      const { data: dataGet, error: errorGet } = await this.vote.getVote(id)
+
+      if(dataGet.length === 0) {
+        // create
+        const insert = {
+          text_name: text_name,
+          like: type === 1,
+          unlike: type === 0,
+          user: user,
+          uid: uid,
+          id_text_name: id
+        }
+
+        const { data:dataCreate, error:errorCreate } = await this.vote.createVote(insert)
+        console.log(dataCreate)
+      } else {
+        // update
+        // like
+        if(type === 1) {
+          const { data:dataUpVote, error:errorUpVote } = await this.vote.upVote(id)
+          console.log(dataUpVote)
+        }
+        // unlike
+        if(type === 0) {
+          const { data:dataDownVote, error:errorDownVote } = await this.vote.downVote(id)
+          console.log(dataDownVote)
+        }
+      }
+    } catch (error) {
+      console.log('err', error)
+    }
   }
 //readmore
 /*  toggle() {
