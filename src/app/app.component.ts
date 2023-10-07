@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 //import { ListPage } from '../pages/list/list';
 import { AboutPage } from '../pages/about/about';
 
+import { VoteService } from '../service/vote.service';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -20,9 +22,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public loadingCtrl: LoadingController) {
+  constructor(
+    public vote: VoteService,
+    public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public loadingCtrl: LoadingController) {
     this.initializeApp();
 
+    this.onVote()
     // used for an example of ngFor and navigation
     this.pages = [
       //{ title: 'Home', component: HomePage },
@@ -30,6 +35,26 @@ export class MyApp {
       { title: ' ͕͗🇽​͕͕͗͗🇽​͕͕͗͗🇽​͕͗ ͕͗🇽​͕͕͗͗🇽​͕͕͗͗🇽​͕͗ ͕͗🇽​͕͕͗͗🇽​͕͕͗͗🇽​͕͗  ', component: AboutPage }
     ];
 
+  }
+
+  
+  async onVote(): Promise<void> {
+    try {
+      console.log(this.vote)
+      const insert = {
+        text_name: "test fe",
+        like: true,
+        unlike: false,
+        user: {},
+      }
+      // const { data:dataCreate, error:errorCreate } = await this.vote.createVote(insert)
+      const { data: dataGet, error: errorGet } = await this.vote.getVote()
+
+      // console.log({dataCreate, errorCreate})
+      console.log({dataGet, errorGet})
+    } catch (error) {
+      console.log('err', error)
+    }
   }
 
   initializeApp() {

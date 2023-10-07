@@ -10,6 +10,8 @@ import { AboutPage } from '../pages/about/about';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SupabaseService } from './supabase.service';
+import { VoteService } from '../service/vote.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage
   ],
   providers: [
+    SupabaseService,
+    VoteService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

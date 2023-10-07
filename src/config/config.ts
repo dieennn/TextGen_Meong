@@ -15,4 +15,7 @@ export const environment = {
 
   passphrase: process.env.PASSPHRASE || '',
   keyLocalStorage: process.env.KEYLOCALSTORAGE || '',
+
+  supabaseUrl: process.env.SUPABASE_URL || '',
+  supabaseKey: process.env.SUPABASE_KEY || '',
 };
