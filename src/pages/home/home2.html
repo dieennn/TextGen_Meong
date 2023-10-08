@@ -31,7 +31,8 @@
     <div class="inputContainer control gradientGray">
       <div class="inputStyler gradientAzure">
         <textarea id="textin" data-value="Enter your text here!">Enter your text here!</textarea>
-        <span class="go" title="Go"></span><span class="empty" title="Clear all fields"></span>
+        <span class="go" title="Go"></span>
+        <span class="empty" title="Clear all fields"></span>
       </div>
     </div>
     <div class="inputTextad control">
@@ -83,11 +84,6 @@
         <div class="info"><span class="exp"></span>1. Math Serif Bolds</div>
         <div class="action">
           <span class="copy" title="Copye"></span>
-          <span title="getVote">
-            <button (click)="onVote()" title="close">
-              <ion-icon name="md-close" isActive="false"></ion-icon>
-            </button>
-          </span>
           <span class="like" title="I like this" (click)="onVote('math serif bold', '175-1')"></span>
           <span class="dislike" title="I dislike this" (click)="onVote('math serif bold', '175-0')"></span>
         </div>
@@ -133,8 +129,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>4. Math Serif Italic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="192-1"></span><span class="dislike" title="I dislike this" data-vote="192-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math serif italic', '192-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math serif italic', '192-0')"></span>
         </div>
         <hr />
       </div>
@@ -144,8 +140,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>5. Monospace</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="169-1"></span><span class="dislike" title="I dislike this" data-vote="169-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('monospace', '169-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('monospace', '169-0')"></span>
         </div>
         <hr />
       </div>
@@ -163,8 +159,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>6. Math Serif Bold Italic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="177-1"></span><span class="dislike" title="I dislike this" data-vote="177-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math serif bold italic', '177-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math serif bold italic', '177-0')"></span>
         </div>
         <hr />
       </div>
@@ -174,8 +170,8 @@
       <div class="interact">
         <div class="info">7. Lower Upper Light</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="119-1"></span><span class="dislike" title="I dislike this" data-vote="119-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('lower upper light', '119-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('lower upper light', '119-0')"></span>
         </div>
         <hr />
       </div>
@@ -191,8 +187,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>8. Math Fraktur Bold</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="176-1"></span><span class="dislike" title="I dislike this" data-vote="176-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math fraktur bold', '176-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math fraktur bold', '176-0')"></span>
         </div>
         <hr />
       </div>
@@ -203,8 +199,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>9. Math Sans Bold</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="179-1"></span><span class="dislike" title="I dislike this" data-vote="179-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math sans bold', '179-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math sans bold', '179-0')"></span>
         </div>
         <hr />
       </div>
@@ -220,8 +216,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>10. Math Sans</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="178-1"></span><span class="dislike" title="I dislike this" data-vote="178-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math sans', '178-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math sans', '178-0')"></span>
         </div>
         <hr />
       </div>
@@ -258,8 +254,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>11. Math Sans Bold Italic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="180-1"></span><span class="dislike" title="I dislike this" data-vote="180-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math sans bold italic', '180-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math sans bold italic', '180-0')"></span>
         </div>
         <hr />
       </div>
@@ -275,8 +271,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>12. Double Struck</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="165-1"></span><span class="dislike" title="I dislike this" data-vote="165-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('double struck', '165-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('double struck', '165-0')"></span>
         </div>
         <hr />
       </div>
@@ -286,8 +282,8 @@
       <div class="interact">
         <div class="info">13. Dwarf</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="120-1"></span><span class="dislike" title="I dislike this" data-vote="120-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('dwarf small tiny superscrip', '120-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('dwarf small tiny superscrip', '120-0')"></span>
         </div>
         <hr />
       </div>
@@ -303,8 +299,8 @@
       <div class="interact">
         <div class="info">14. Lilia</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="203-1"></span><span class="dislike" title="I dislike this" data-vote="203-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('lilia', '203-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('lilia', '203-0')"></span>
         </div>
         <hr />
       </div>
@@ -315,8 +311,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>15. Math Script (Royal)</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="191-1"></span><span class="dislike" title="I dislike this" data-vote="191-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math script (royal) writin', '191-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math script (royal) writin', '191-0')"></span>
         </div>
         <hr />
       </div>
@@ -333,8 +329,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>16. Math Sans Italic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="181-1"></span><span class="dislike" title="I dislike this" data-vote="181-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math sans italic', '181-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math sans italic', '181-0')"></span>
         </div>
         <hr />
       </div>
@@ -344,8 +340,8 @@
       <div class="interact">
         <div class="info">17. Smooth</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="117-1"></span><span class="dislike" title="I dislike this" data-vote="117-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('smooth', '117-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('smooth', '117-0')"></span>
         </div>
         <hr />
       </div>
@@ -361,8 +357,8 @@
       <div class="interact">
         <div class="info">18. Messletters</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="216-1"></span><span class="dislike" title="I dislike this" data-vote="216-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('messletters', '216-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('messletters', '216-0')"></span>
         </div>
         <hr />
       </div>
@@ -373,8 +369,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>19. Math Fraktur</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="162-1"></span><span class="dislike" title="I dislike this" data-vote="162-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('math fraktur', '162-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('math fraktur', '162-0')"></span>
         </div>
         <hr />
       </div>
@@ -389,8 +385,8 @@
       <div class="interact">
         <div class="info">20. Tai Le v2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="221-1"></span><span class="dislike" title="I dislike this" data-vote="221-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('tai le v2', '221-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('tai le v2', '221-0')"></span>
         </div>
         <hr />
       </div>
@@ -400,8 +396,8 @@
       <div class="interact">
         <div class="info">21. Smooth v2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="159-1"></span><span class="dislike" title="I dislike this" data-vote="159-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('smooth v2', '159-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('smooth v2', '159-0')"></span>
         </div>
         <hr />
       </div>
@@ -416,8 +412,8 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>22. Cherokee</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="204-1"></span><span class="dislike" title="I dislike this" data-vote="204-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('cherokee', '204-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('cherokee', '204-0')"></span>
         </div>
         <hr />
       </div>
@@ -428,8 +424,10 @@
       <div class="interact">
         <div class="info"><span class="exp"></span>23. Math Script Customized (Royal)</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="160-1"></span><span class="dislike" title="I dislike this" data-vote="160-0"></span> -->
+          <span class="like" title="I like this"
+            (click)="onVote('math script customized (royal) writin', '160-1')"></span>
+          <span class="dislike" title="I dislike this"
+            (click)="onVote('math script customized (royal) writin', '160-0')"></span>
         </div>
         <hr />
       </div>
@@ -444,8 +442,8 @@
       <div class="interact">
         <div class="info">24. Classic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="116-1"></span><span class="dislike" title="I dislike this" data-vote="116-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('classic', '116-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('classic', '116-0')"></span>
         </div>
         <hr />
       </div>
@@ -455,8 +453,8 @@
       <div class="interact">
         <div class="info">25. Africa</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="217-1"></span><span class="dislike" title="I dislike this" data-vote="217-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('africa', '217-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('africa', '217-0')"></span>
         </div>
         <hr />
       </div>
@@ -467,8 +465,8 @@
       <div class="interact">
         <div class="info">26. Lower Upper Refurbished</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="182-1"></span><span class="dislike" title="I dislike this" data-vote="182-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('lower upper refurbished', '182-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('lower upper refurbished', '182-0')"></span>
         </div>
         <hr />
       </div>
@@ -478,8 +476,8 @@
       <div class="interact">
         <div class="info">27. Circled Black</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="174-1"></span><span class="dislike" title="I dislike this" data-vote="174-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('circled black roun', '174-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('circled black roun', '174-0')"></span>
         </div>
         <hr />
       </div>
@@ -489,8 +487,8 @@
       <div class="interact">
         <div class="info">28. Fullwidth</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="134-1"></span><span class="dislike" title="I dislike this" data-vote="134-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('fullwidth wid', '134-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('fullwidth wid', '134-0')"></span>
         </div>
         <hr />
       </div>
@@ -500,8 +498,8 @@
       <div class="interact">
         <div class="info">29. Greek v2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="208-1"></span><span class="dislike" title="I dislike this" data-vote="208-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('greek v2', '208-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('greek v2', '208-0')"></span>
         </div>
         <hr />
       </div>
@@ -511,8 +509,8 @@
       <div class="interact">
         <div class="info">30. Boxed</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="183-1"></span><span class="dislike" title="I dislike this" data-vote="183-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('boxed block squar', '183-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('boxed block squar', '183-0')"></span>
         </div>
         <hr />
       </div>
@@ -523,8 +521,8 @@
       <div class="interact">
         <div class="info">31. Tai Le v2 ft. Canadian Curly</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="223-1"></span><span class="dislike" title="I dislike this" data-vote="223-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('tai le v2 ft. canadian curly', '223-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('tai le v2 ft. canadian curly', '223-0')"></span>
         </div>
         <hr />
       </div>
@@ -534,8 +532,8 @@
       <div class="interact">
         <div class="info">32. Carrier</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="166-1"></span><span class="dislike" title="I dislike this" data-vote="166-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('carrier roun', '166-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('carrier roun', '166-0')"></span>
         </div>
         <hr />
       </div>
@@ -545,8 +543,8 @@
       <div class="interact">
         <div class="info">33. Lower Upper Bold</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="173-1"></span><span class="dislike" title="I dislike this" data-vote="173-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('lower upper bold', '173-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('lower upper bold', '173-0')"></span>
         </div>
         <hr />
       </div>
@@ -556,8 +554,8 @@
       <div class="interact">
         <div class="info">34. Cute v3</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="207-1"></span><span class="dislike" title="I dislike this" data-vote="207-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('cute v3', '207-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('cute v3', '207-0')"></span>
         </div>
         <hr />
       </div>
@@ -567,8 +565,8 @@
       <div class="interact">
         <div class="info">35. Boxed Black</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="184-1"></span><span class="dislike" title="I dislike this" data-vote="184-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('boxed black block squar', '184-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('boxed black block squar', '184-0')"></span>
         </div>
         <hr />
       </div>
@@ -578,8 +576,8 @@
       <div class="interact">
         <div class="info">36. Diagonal Stripes</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="212-1"></span><span class="dislike" title="I dislike this" data-vote="212-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('diagonal stripes lin', '212-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('diagonal stripes lin', '212-0')"></span>
         </div>
         <hr />
       </div>
@@ -589,8 +587,8 @@
       <div class="interact">
         <div class="info">37. Gothic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="148-1"></span><span class="dislike" title="I dislike this" data-vote="148-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('gothic', '148-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('gothic', '148-0')"></span>
         </div>
         <hr />
       </div>
@@ -600,8 +598,8 @@
       <div class="interact">
         <div class="info">38. Circled</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="132-1"></span><span class="dislike" title="I dislike this" data-vote="132-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('circled roun', '132-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('circled roun', '132-0')"></span>
         </div>
         <hr />
       </div>
@@ -611,8 +609,8 @@
       <div class="interact">
         <div class="info">39. MirrorFlip</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="190-1"></span><span class="dislike" title="I dislike this" data-vote="190-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('mirrorflip', '190-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('mirrorflip', '190-0')"></span>
         </div>
         <hr />
       </div>
@@ -622,8 +620,8 @@
       <div class="interact">
         <div class="info">40. Coptic Standard</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="214-1"></span><span class="dislike" title="I dislike this" data-vote="214-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('coptic standard', '214-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('coptic standard', '214-0')"></span>
         </div>
         <hr />
       </div>
@@ -633,8 +631,8 @@
       <div class="interact">
         <div class="info">41. CJK</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="128-1"></span><span class="dislike" title="I dislike this" data-vote="128-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('cjk', '128-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('cjk', '128-0')"></span>
         </div>
         <hr />
       </div>
@@ -644,8 +642,8 @@
       <div class="interact">
         <div class="info">42. Coptic Fancy</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="215-1"></span><span class="dislike" title="I dislike this" data-vote="215-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('coptic fancy', '215-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('coptic fancy', '215-0')"></span>
         </div>
         <hr />
       </div>
@@ -655,8 +653,8 @@
       <div class="interact">
         <div class="info">43. African Unicase 1982</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="220-1"></span><span class="dislike" title="I dislike this" data-vote="220-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('african unicase 1982', '220-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('african unicase 1982', '220-0')"></span>
         </div>
         <hr />
       </div>
@@ -666,8 +664,8 @@
       <div class="interact">
         <div class="info">44. Cute v2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="206-1"></span><span class="dislike" title="I dislike this" data-vote="206-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('cute v2', '206-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('cute v2', '206-0')"></span>
         </div>
         <hr />
       </div>
@@ -677,8 +675,8 @@
       <div class="interact">
         <div class="info">45. Handwrite</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="158-1"></span><span class="dislike" title="I dislike this" data-vote="158-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('handwrite', '158-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('handwrite', '158-0')"></span>
         </div>
         <hr />
       </div>
@@ -688,8 +686,8 @@
       <div class="interact">
         <div class="info">46. Strikethrough</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="188-1"></span><span class="dislike" title="I dislike this" data-vote="188-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('strikethrough', '188-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('strikethrough', '188-0')"></span>
         </div>
         <hr />
       </div>
@@ -699,8 +697,8 @@
       <div class="interact">
         <div class="info">47. Pan Nigerian</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="218-1"></span><span class="dislike" title="I dislike this" data-vote="218-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('pan nigerian', '218-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('pan nigerian', '218-0')"></span>
         </div>
         <hr />
       </div>
@@ -710,8 +708,8 @@
       <div class="interact">
         <div class="info">48. Diagonal Stripes 2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="213-1"></span><span class="dislike" title="I dislike this" data-vote="213-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('diagonal stripes 2 lin', '213-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('diagonal stripes 2 lin', '213-0')"></span>
         </div>
         <hr />
       </div>
@@ -721,8 +719,8 @@
       <div class="interact">
         <div class="info">49. BigOne</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="144-1"></span><span class="dislike" title="I dislike this" data-vote="144-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('bigone', '144-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('bigone', '144-0')"></span>
         </div>
         <hr />
       </div>
@@ -732,8 +730,8 @@
       <div class="interact">
         <div class="info">50. Black Panther</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="202-1"></span><span class="dislike" title="I dislike this" data-vote="202-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('black panther', '202-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('black panther', '202-0')"></span>
         </div>
         <hr />
       </div>
@@ -743,8 +741,8 @@
       <div class="interact">
         <div class="info"><span class="new"></span>51. Scammer</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="224-1"></span><span class="dislike" title="I dislike this" data-vote="224-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('scammer', '224-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('scammer', '224-0')"></span>
         </div>
         <hr />
       </div>
@@ -754,8 +752,8 @@
       <div class="interact">
         <div class="info">52. Love</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="149-1"></span><span class="dislike" title="I dislike this" data-vote="149-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('love', '149-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('love', '149-0')"></span>
         </div>
         <hr />
       </div>
@@ -765,8 +763,8 @@
       <div class="interact">
         <div class="info">53. Awesome</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="122-1"></span><span class="dislike" title="I dislike this" data-vote="122-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('awesome', '122-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('awesome', '122-0')"></span>
         </div>
         <hr />
       </div>
@@ -776,8 +774,8 @@
       <div class="interact">
         <div class="info">54. CarrierII</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="167-1"></span><span class="dislike" title="I dislike this" data-vote="167-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('carrierii', '167-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('carrierii', '167-0')"></span>
         </div>
         <hr />
       </div>
@@ -787,8 +785,8 @@
       <div class="interact">
         <div class="info">55. Swipe</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="147-1"></span><span class="dislike" title="I dislike this" data-vote="147-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('swipe', '147-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('swipe', '147-0')"></span>
         </div>
         <hr />
       </div>
@@ -798,8 +796,8 @@
       <div class="interact">
         <div class="info">56. Russian</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="131-1"></span><span class="dislike" title="I dislike this" data-vote="131-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('russian', '131-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('russian', '131-0')"></span>
         </div>
         <hr />
       </div>
@@ -809,8 +807,8 @@
       <div class="interact">
         <div class="info">57. Yi Three</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="196-1"></span><span class="dislike" title="I dislike this" data-vote="196-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi three', '196-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi three', '196-0')"></span>
         </div>
         <hr />
       </div>
@@ -820,8 +818,8 @@
       <div class="interact">
         <div class="info">58. 1337</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="152-1"></span><span class="dislike" title="I dislike this" data-vote="152-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('1337', '152-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('1337', '152-0')"></span>
         </div>
         <hr />
       </div>
@@ -831,8 +829,8 @@
       <div class="interact">
         <div class="info">59. Greek</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="136-1"></span><span class="dislike" title="I dislike this" data-vote="136-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('greek', '136-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('greek', '136-0')"></span>
         </div>
         <hr />
       </div>
@@ -842,8 +840,8 @@
       <div class="interact">
         <div class="info">60. Canadian Curly</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="222-1"></span><span class="dislike" title="I dislike this" data-vote="222-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('canadian curly', '222-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('canadian curly', '222-0')"></span>
         </div>
         <hr />
       </div>
@@ -853,8 +851,8 @@
       <div class="interact">
         <div class="info">61. Celtic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="130-1"></span><span class="dislike" title="I dislike this" data-vote="130-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('celtic', '130-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('celtic', '130-0')"></span>
         </div>
         <hr />
       </div>
@@ -864,8 +862,8 @@
       <div class="interact">
         <div class="info">62. Writing</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="143-1"></span><span class="dislike" title="I dislike this" data-vote="143-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('writing', '143-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('writing', '143-0')"></span>
         </div>
         <hr />
       </div>
@@ -875,8 +873,8 @@
       <div class="interact">
         <div class="info">63. African 1978</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="219-1"></span><span class="dislike" title="I dislike this" data-vote="219-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('african 1978', '219-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('african 1978', '219-0')"></span>
         </div>
         <hr />
       </div>
@@ -886,8 +884,8 @@
       <div class="interact">
         <div class="info">64. Yi One</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="194-1"></span><span class="dislike" title="I dislike this" data-vote="194-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi one', '194-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi one', '194-0')"></span>
         </div>
         <hr />
       </div>
@@ -897,8 +895,8 @@
       <div class="interact">
         <div class="info">65. FancyCurly</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="154-1"></span><span class="dislike" title="I dislike this" data-vote="154-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('fancycurly', '154-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('fancycurly', '154-0')"></span>
         </div>
         <hr />
       </div>
@@ -908,8 +906,8 @@
       <div class="interact">
         <div class="info">66. Swirly</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="157-1"></span><span class="dislike" title="I dislike this" data-vote="157-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('swirly', '157-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('swirly', '157-0')"></span>
         </div>
         <hr />
       </div>
@@ -919,8 +917,8 @@
       <div class="interact">
         <div class="info">67. Cute v1</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="124-1"></span><span class="dislike" title="I dislike this" data-vote="124-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('cute v1', '124-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('cute v1', '124-0')"></span>
         </div>
         <hr />
       </div>
@@ -930,8 +928,8 @@
       <div class="interact">
         <div class="info">68. Sticks</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="209-1"></span><span class="dislike" title="I dislike this" data-vote="209-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('sticks', '209-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('sticks', '209-0')"></span>
         </div>
         <hr />
       </div>
@@ -941,8 +939,8 @@
       <div class="interact">
         <div class="info">69. Yi Six</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="199-1"></span><span class="dislike" title="I dislike this" data-vote="199-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi six', '199-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi six', '199-0')"></span>
         </div>
         <hr />
       </div>
@@ -952,8 +950,8 @@
       <div class="interact">
         <div class="info">70. Russian v2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="205-1"></span><span class="dislike" title="I dislike this" data-vote="205-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('russian v2', '205-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('russian v2', '205-0')"></span>
         </div>
         <hr />
       </div>
@@ -963,8 +961,8 @@
       <div class="interact">
         <div class="info">71. Emoji</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="210-1"></span><span class="dislike" title="I dislike this" data-vote="210-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('emoji', '210-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('emoji', '210-0')"></span>
         </div>
         <hr />
       </div>
@@ -974,8 +972,8 @@
       <div class="interact">
         <div class="info">72. Yi Four</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="197-1"></span><span class="dislike" title="I dislike this" data-vote="197-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi four', '197-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi four', '197-0')"></span>
         </div>
         <hr />
       </div>
@@ -985,8 +983,8 @@
       <div class="interact">
         <div class="info">73. Malayalam</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="211-1"></span><span class="dislike" title="I dislike this" data-vote="211-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('malayalam', '211-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('malayalam', '211-0')"></span>
         </div>
         <hr />
       </div>
@@ -996,8 +994,8 @@
       <div class="interact">
         <div class="info">74. Cranky</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="155-1"></span><span class="dislike" title="I dislike this" data-vote="155-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('cranky', '155-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('cranky', '155-0')"></span>
         </div>
         <hr />
       </div>
@@ -1007,8 +1005,8 @@
       <div class="interact">
         <div class="info">75. Stupid</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="135-1"></span><span class="dislike" title="I dislike this" data-vote="135-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('stupid', '135-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('stupid', '135-0')"></span>
         </div>
         <hr />
       </div>
@@ -1018,8 +1016,8 @@
       <div class="interact">
         <div class="info">76. Curly</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="164-1"></span><span class="dislike" title="I dislike this" data-vote="164-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('curly', '164-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('curly', '164-0')"></span>
         </div>
         <hr />
       </div>
@@ -1029,8 +1027,8 @@
       <div class="interact">
         <div class="info">77. Mirror</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="137-1"></span><span class="dislike" title="I dislike this" data-vote="137-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('mirror', '137-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('mirror', '137-0')"></span>
         </div>
         <hr />
       </div>
@@ -1040,8 +1038,8 @@
       <div class="interact">
         <div class="info">78. Fasion</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="156-1"></span><span class="dislike" title="I dislike this" data-vote="156-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('fasion', '156-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('fasion', '156-0')"></span>
         </div>
         <hr />
       </div>
@@ -1051,8 +1049,8 @@
       <div class="interact">
         <div class="info">79. Strange</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="115-1"></span><span class="dislike" title="I dislike this" data-vote="115-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('strange', '115-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('strange', '115-0')"></span>
         </div>
         <hr />
       </div>
@@ -1062,8 +1060,8 @@
       <div class="interact">
         <div class="info">80. Yi Eight</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="201-1"></span><span class="dislike" title="I dislike this" data-vote="201-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi eight', '201-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi eight', '201-0')"></span>
         </div>
         <hr />
       </div>
@@ -1073,8 +1071,8 @@
       <div class="interact">
         <div class="info">81. DraKo</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="172-1"></span><span class="dislike" title="I dislike this" data-vote="172-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('drako', '172-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('drako', '172-0')"></span>
         </div>
         <hr />
       </div>
@@ -1084,8 +1082,8 @@
       <div class="interact">
         <div class="info">82. Parenthesized</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="133-1"></span><span class="dislike" title="I dislike this" data-vote="133-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('parenthesized', '133-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('parenthesized', '133-0')"></span>
         </div>
         <hr />
       </div>
@@ -1095,8 +1093,8 @@
       <div class="interact">
         <div class="info">83. Ribbon</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="141-1"></span><span class="dislike" title="I dislike this" data-vote="141-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('ribbon', '141-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('ribbon', '141-0')"></span>
         </div>
         <hr />
       </div>
@@ -1106,8 +1104,8 @@
       <div class="interact">
         <div class="info">84. Yi Two</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="195-1"></span><span class="dislike" title="I dislike this" data-vote="195-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi two', '195-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi two', '195-0')"></span>
         </div>
         <hr />
       </div>
@@ -1117,8 +1115,8 @@
       <div class="interact">
         <div class="info">85. Attila</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="121-1"></span><span class="dislike" title="I dislike this" data-vote="121-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('attila', '121-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('attila', '121-0')"></span>
         </div>
         <hr />
       </div>
@@ -1128,8 +1126,8 @@
       <div class="interact">
         <div class="info">86. Dotted</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="129-1"></span><span class="dislike" title="I dislike this" data-vote="129-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('dotted', '129-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('dotted', '129-0')"></span>
         </div>
         <hr />
       </div>
@@ -1139,8 +1137,8 @@
       <div class="interact">
         <div class="info">87. Facebook 2</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="171-1"></span><span class="dislike" title="I dislike this" data-vote="171-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('facebook 2', '171-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('facebook 2', '171-0')"></span>
         </div>
         <hr />
       </div>
@@ -1150,8 +1148,8 @@
       <div class="interact">
         <div class="info">88. Hyves</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="118-1"></span><span class="dislike" title="I dislike this" data-vote="118-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('hyves', '118-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('hyves', '118-0')"></span>
         </div>
         <hr />
       </div>
@@ -1161,8 +1159,8 @@
       <div class="interact">
         <div class="info">89. AwCute</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="185-1"></span><span class="dislike" title="I dislike this" data-vote="185-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('awcute', '185-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('awcute', '185-0')"></span>
         </div>
         <hr />
       </div>
@@ -1172,8 +1170,8 @@
       <div class="interact">
         <div class="info">90. Flip</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="150-1"></span><span class="dislike" title="I dislike this" data-vote="150-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('flip', '150-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('flip', '150-0')"></span>
         </div>
         <hr />
       </div>
@@ -1183,8 +1181,8 @@
       <div class="interact">
         <div class="info">91. Facebook</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="170-1"></span><span class="dislike" title="I dislike this" data-vote="170-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('facebook', '170-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('facebook', '170-0')"></span>
         </div>
         <hr />
       </div>
@@ -1194,8 +1192,8 @@
       <div class="interact">
         <div class="info">92. Maniac</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="139-1"></span><span class="dislike" title="I dislike this" data-vote="139-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('maniac', '139-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('maniac', '139-0')"></span>
         </div>
         <hr />
       </div>
@@ -1205,8 +1203,8 @@
       <div class="interact">
         <div class="info">93. Twisted</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="138-1"></span><span class="dislike" title="I dislike this" data-vote="138-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('twisted', '138-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('twisted', '138-0')"></span>
         </div>
         <hr />
       </div>
@@ -1216,8 +1214,8 @@
       <div class="interact">
         <div class="info">94. Wiggly</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="145-1"></span><span class="dislike" title="I dislike this" data-vote="145-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('wiggly', '145-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('wiggly', '145-0')"></span>
         </div>
         <hr />
       </div>
@@ -1227,8 +1225,8 @@
       <div class="interact">
         <div class="info">95. Yi Seven</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="200-1"></span><span class="dislike" title="I dislike this" data-vote="200-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi seven', '200-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi seven', '200-0')"></span>
         </div>
         <hr />
       </div>
@@ -1238,8 +1236,8 @@
       <div class="interact">
         <div class="info">96. Crazy</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="142-1"></span><span class="dislike" title="I dislike this" data-vote="142-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('crazy', '142-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('crazy', '142-0')"></span>
         </div>
         <hr />
       </div>
@@ -1249,8 +1247,8 @@
       <div class="interact">
         <div class="info">97. Yi Five</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="198-1"></span><span class="dislike" title="I dislike this" data-vote="198-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('yi five', '198-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('yi five', '198-0')"></span>
         </div>
         <hr />
       </div>
@@ -1260,8 +1258,8 @@
       <div class="interact">
         <div class="info">98. Hazy</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="123-1"></span><span class="dislike" title="I dislike this" data-vote="123-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('hazy', '123-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('hazy', '123-0')"></span>
         </div>
         <hr />
       </div>
@@ -1271,8 +1269,8 @@
       <div class="interact">
         <div class="info">99. Faux Ethiopic</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="186-1"></span><span class="dislike" title="I dislike this" data-vote="186-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('faux ethiopic', '186-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('faux ethiopic', '186-0')"></span>
         </div>
         <hr />
       </div>
@@ -1282,8 +1280,8 @@
       <div class="interact">
         <div class="info">100. Slammer</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="153-1"></span><span class="dislike" title="I dislike this" data-vote="153-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('slammer', '153-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('slammer', '153-0')"></span>
         </div>
         <hr />
       </div>
@@ -1293,8 +1291,8 @@
       <div class="interact">
         <div class="info">101. Tamil</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="140-1"></span><span class="dislike" title="I dislike this" data-vote="140-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('tamil', '140-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('tamil', '140-0')"></span>
         </div>
         <hr />
       </div>
@@ -1304,8 +1302,8 @@
       <div class="interact">
         <div class="info">102. Big Momma</div>
         <div class="action"><span class="copy" title="Copy"></span>
-          <!-- <span class="like" title="I like this"
-                        data-vote="146-1"></span><span class="dislike" title="I dislike this" data-vote="146-0"></span> -->
+          <span class="like" title="I like this" (click)="onVote('big momma huge meg', '146-1')"></span>
+          <span class="dislike" title="I dislike this" (click)="onVote('big momma huge meg', '146-0')"></span>
         </div>
         <hr />
       </div>

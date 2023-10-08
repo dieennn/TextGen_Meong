@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 //import { NavController } from 'ionic-angular';
-import {NavController, IonicPage} from 'ionic-angular';
-import { ModalController } from 'ionic-angular';
-import { LoadingController } from 'ionic-angular';
+import { NavController, IonicPage } from "ionic-angular";
+import { ModalController } from "ionic-angular";
+import { LoadingController } from "ionic-angular";
 
-import {isLogin} from "../../helper/auth"
-import { VoteService } from '../../service/vote.service';
-import { splitIdType, getUserLogin } from '../../helper/formatter';
+import { isLogin } from "../../helper/auth";
+import { VoteInsert, VoteService } from "../../service/vote.service";
+import { splitIdType, getUserLogin } from "../../helper/formatter";
+import { UserInsert, UserService } from "../../service/user.service";
+import {
+  FancytextInsert,
+  FancytextService,
+} from "../../service/fancytext.service";
 
 // import { Platform } from 'ionic-angular';
 //import {Autosize} from 'angular2-autosize';
@@ -14,88 +19,117 @@ import { splitIdType, getUserLogin } from '../../helper/formatter';
 //import * as $ from 'autosize';
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home2.html'
+  selector: "page-home",
+  templateUrl: "home2.html",
 })
 export class HomePage {
-  isLogin: boolean
-
+  isLogin: boolean;
 
   constructor(
     public vote: VoteService,
-    public navCtrl: NavController, 
-  	public modalCtrl : ModalController,
-  	public loadingCtrl: LoadingController) {
+    public user: UserService,
+    public fancy: FancytextService,
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController
+  ) {
     /*platform.registerBackButtonAction(() => {
       console.log("backPressed 1");
     },1);*/
   }
 
-  
-  
   async onVote(text_name: string, idText?: string): Promise<void> {
     try {
-      const { uid, ...user } = getUserLogin()
-      const {id, type} = splitIdType(idText)
+      const { uid, email, displayName, photoURL, ...user } = getUserLogin();
+      const { id, type } = splitIdType(idText);
 
-      const { data: dataGet, error: errorGet } = await this.vote.getVote(id)
+      const { data: dataFancytext, error: errorFancytext } =
+        await this.fancy.getFancytext(id);
+      const { data: dataUser, error: errorUser } = await this.user.getData(uid);
+      const { data: dataVote, error: errorVote } = await this.vote.getVote(id);
 
-      if(dataGet.length === 0) {
-        // create
-        const insert = {
-          text_name: text_name,
-          like: type === 1,
-          unlike: type === 0,
-          user: user,
+      if (dataFancytext.length === 0) {
+        const insertFancytext: FancytextInsert = {
+          id_title: id,
+          title: text_name,
+          created_by: uid,
+        };
+
+        const { data: dataCreate, error: errorCreate } =
+          await this.fancy.createFancytext(insertFancytext);
+        console.log("create fancytext", { dataCreate, errorCreate });
+      }
+
+      if (dataUser.length === 0) {
+        const insertUser: UserInsert = {
           uid: uid,
-          id_text_name: id
-        }
+          email: email,
+          display_name: displayName,
+          photo_url: photoURL,
+          detail: user,
+        };
+        const { data: dataCreate, error: errorCreate } =
+          await this.user.createData(insertUser);
+        console.log("create user", { dataCreate, errorCreate });
+      }
 
-        const { data:dataCreate, error:errorCreate } = await this.vote.createVote(insert)
-        console.log(dataCreate)
+      if (dataVote.length === 0) {
+        // create
+        const insertVote: VoteInsert = {
+          upvote: type === 1,
+          downvote: type === 0,
+          user_uid: uid,
+          fancy_text_id_title: id,
+        };
+
+        const { data: dataCreate, error: errorCreate } =
+          await this.vote.createVote(insertVote);
+        console.log("create vote", { dataCreate, errorCreate });
       } else {
         // update
         // like
-        if(type === 1) {
-          const { data:dataUpVote, error:errorUpVote } = await this.vote.upVote(id)
-          console.log(dataUpVote)
+        if (type === 1) {
+          const { data: dataUpVote, error: errorUpVote } =
+            await this.vote.upVote(id);
+          console.log(dataUpVote);
         }
         // unlike
-        if(type === 0) {
-          const { data:dataDownVote, error:errorDownVote } = await this.vote.downVote(id)
-          console.log(dataDownVote)
+        if (type === 0) {
+          const { data: dataDownVote, error: errorDownVote } =
+            await this.vote.downVote(id);
+          console.log(dataDownVote);
         }
       }
     } catch (error) {
-      console.log('err', error)
+      console.log("err", error);
     }
   }
-//readmore
-/*  toggle() {
+  //readmore
+  /*  toggle() {
   $ ('.moreContent').slideToggle();
   }*/
-//modal
-	openModal(){
-    var data = { message : 'hello world' };
-    var modalPage = this.modalCtrl.create('ModalPage',data);
+  //modal
+  openModal() {
+    var data = { message: "hello world" };
+    var modalPage = this.modalCtrl.create("ModalPage", data);
     modalPage.present();
-	}
-//modal
-//modal
-	loginProfile(){
-    if(isLogin()) {
-      this.modalCtrl.create('ProfilePage').present();
+  }
+  //modal
+  //modal
+  loginProfile() {
+    if (isLogin()) {
+      this.modalCtrl.create("ProfilePage").present();
     } else {
-      this.modalCtrl.create('LoginPage').present();
+      this.modalCtrl.create("LoginPage").present();
     }
-	}
-//modal
+  }
+  //modal
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
+    console.log("Begin async operation", refresher);
 
     setTimeout(() => {
-      console.log('Async operation has ended');
+      console.log("Async operation has ended");
       refresher.complete();
     }, 2000);
   }
